@@ -8,6 +8,8 @@ public class PlayerMove : MonoBehaviour
     Rigidbody2D rb;
     float horizontal, vertical;
     Vector2 moveDir;
+
+    public Animator anim;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +21,9 @@ public class PlayerMove : MonoBehaviour
     {
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
+
+        anim.SetFloat("Speed", Mathf.Abs(moveDir.x != 0 ? moveDir.x : moveDir.y));
+;
 
         moveDir = new Vector2 (horizontal, vertical).normalized;
 
