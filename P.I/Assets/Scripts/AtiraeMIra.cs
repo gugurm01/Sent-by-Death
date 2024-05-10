@@ -22,6 +22,9 @@ public class AtiraeMIra : MonoBehaviour
 
     private void HandleGunRotation()
     {
+        if(Scmitar.isAttacking == true)
+        
+            return;
         worldPosition = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
         direction = (worldPosition - (Vector2)gun.transform.position).normalized;
         gun.transform.right = direction;
