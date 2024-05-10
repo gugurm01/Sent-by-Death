@@ -41,10 +41,12 @@ public class AtiraeMIra : MonoBehaviour
         if(transform.eulerAngles.z > 90 && transform.eulerAngles.z < 270)
         {
             gunSR.sortingOrder = playerSR.sortingOrder - 1;
+            playerSR.flipX = true;
         }
         else 
         {
             gunSR.sortingOrder = playerSR.sortingOrder + 1;
+            playerSR.flipX = false;
         }
     }
 }
