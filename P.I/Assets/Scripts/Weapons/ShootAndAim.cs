@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class ShootAndAim : MonoBehaviour
 {
     public Transform firePoint;
-    public GameObject bulletPrefab;
+    public GameObject bulletPrefab, text;
     public int currentAmmo = -1;
+
+    public TextMeshProUGUI ammoText;
 
     [SerializeField] float reloadTime;
     [SerializeField] int maxAmmo;
@@ -15,6 +18,8 @@ public class ShootAndAim : MonoBehaviour
 
     public void Start()
     {
+        text.SetActive(true);
+
         if(currentAmmo == -1)
         {
             currentAmmo = maxAmmo;
@@ -22,6 +27,8 @@ public class ShootAndAim : MonoBehaviour
     }
     void Update()
     {
+        ammoText.text = currentAmmo.ToString("Ammo: 0");
+
         if (isReloading)
             return;
 

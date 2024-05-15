@@ -7,6 +7,8 @@ public class Scmitar : MonoBehaviour
 {
     public Animator anim;
 
+    public GameObject text;
+
     public float delay = 1.0f;
     private bool block;
 
@@ -22,7 +24,7 @@ public class Scmitar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        text.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
