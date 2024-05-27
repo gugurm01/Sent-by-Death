@@ -6,38 +6,27 @@ public class bullet : MonoBehaviour
 {
     public float spd = 20f;
     public Rigidbody2D rb;
+    public int dano;
+
+    public static bullet Instance;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
     void Start()
     {
         rb.velocity = transform.right * spd;
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // Destroy(collision.gameObject);
-        if (collision.CompareTag("Cometa"))
+        if (collision.CompareTag("Enemy"))
         {
-            Destroy(gameObject);
-            Destroy(collision.gameObject);
-            FindObjectOfType<AudioManager>().Play("explosion");
-        }
-        if (collision.CompareTag("SizeUP"))
-        {
-            Destroy(gameObject);
-            Destroy(collision.gameObject);
-            FindObjectOfType<AudioManager>().Play("explosion");
-        }
-        if (collision.CompareTag("SizeDOWN"))
-        {
-            Destroy(gameObject);
-            Destroy(collision.gameObject);
-            FindObjectOfType<AudioManager>().Play("explosion");
-        }
-        if (collision.CompareTag("VacasSacanas"))
-        {
-            Destroy(gameObject);
-            Destroy(collision.gameObject);
-            FindObjectOfType<AudioManager>().Play("explosion");
+            Destroy(this.gameObject);
         }
     }
+
 
     private void Update()
     {
