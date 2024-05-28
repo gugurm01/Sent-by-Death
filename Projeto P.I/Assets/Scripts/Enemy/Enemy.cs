@@ -5,6 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public int vidas;
+    public ParticleSystem particula;
     void Start()
     {
         
@@ -21,6 +22,8 @@ public class Enemy : MonoBehaviour
         vidas -= damage;
         if (vidas <= 0)
         {
+            ParticleSystem explosão = Instantiate(this.particula, new Vector3(transform.position.x, transform.position.y, -1), Quaternion.identity);
+            Destroy(explosão.gameObject, 1f);
             Destroy(gameObject);
         }
     }
