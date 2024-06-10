@@ -1,3 +1,4 @@
+using EZCameraShake;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,7 @@ public class Enemy : MonoBehaviour
 {
     public int vidas;
     public ParticleSystem particula;
+    public CameraShake shake;
     void Start()
     {
         
@@ -32,6 +34,7 @@ public class Enemy : MonoBehaviour
     {
         if(collision.CompareTag("Bullet"))
         {
+            CameraShaker.Instance.ShakeOnce(3f, 3f, 0.2f, 0.2f);
             TakeDamage(bullet.Instance.dano);
         }
     }
