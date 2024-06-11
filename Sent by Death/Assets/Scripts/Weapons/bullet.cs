@@ -7,6 +7,7 @@ public class bullet : MonoBehaviour
     public float spd = 20f;
     public Rigidbody2D rb;
     public int dano;
+    public int danoInimigo;
 
     public ParticleSystem particula;
 
@@ -33,6 +34,14 @@ public class bullet : MonoBehaviour
             Destroy(explosão.gameObject, 1f);
             Destroy(this.gameObject);
         }
+        if (collision.CompareTag("Player"))
+        {
+            PlayerMove.player.TakeDamage(danoInimigo);
+            ParticleSystem explosão = Instantiate(this.particula, new Vector3(transform.position.x, transform.position.y, -1), Quaternion.identity);
+            Destroy(explosão.gameObject, 1f);
+            Destroy(this.gameObject);
+        }
+        
     }
 
 

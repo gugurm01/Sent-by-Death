@@ -17,11 +17,13 @@ public class PlayerMove : MonoBehaviour
     public int health;
     public float lerpSpeed = 0.5f;
 
+    public static PlayerMove player;
+
     public Animator anim;
     // Start is called before the first frame update
     void Start()
     {
-
+        player = this;
         rb = GetComponent<Rigidbody2D>();
         healthSlider.value = health;
     }
@@ -51,9 +53,9 @@ public class PlayerMove : MonoBehaviour
 
     }
 
-    private void TakeDamage(int dano)
+    public void TakeDamage(int dano)
     {
-        CameraShaker.Instance.ShakeOnce(6f, 6f, .3f, .3f);
+        CameraShaker.Instance.ShakeOnce(10f, 10f, .3f, .3f);
         health -= dano;
         healthSlider.value = health;
         if(health <= 0)

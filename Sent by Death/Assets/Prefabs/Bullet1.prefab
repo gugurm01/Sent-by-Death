@@ -102,6 +102,7 @@ MonoBehaviour:
   spd: 20
   rb: {fileID: 4572197463652450189}
   dano: 2
+  danoInimigo: 40
   particula: {fileID: 8546278494577566325, guid: 028d61d2d23bb964c85a8bee7ac57b2d, type: 3}
 --- !u!50 &4572197463652450189
 Rigidbody2D:
@@ -123,7 +124,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &7374887800133678707
 BoxCollider2D:
   m_ObjectHideFlags: 0
