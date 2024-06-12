@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class PlayerMove : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class PlayerMove : MonoBehaviour
     Rigidbody2D rb;
     float horizontal, vertical;
     Vector2 moveDir;
+    public TextMeshProUGUI healthText;
 
     public Slider healthSlider;
     public Slider easeHealthSlider;
@@ -48,8 +50,10 @@ public class PlayerMove : MonoBehaviour
 
         if(healthSlider.value != easeHealthSlider.value)
         {
-            easeHealthSlider.value = Mathf.Lerp(easeHealthSlider.value, healthSlider.value, lerpSpeed);
+            easeHealthSlider.value = Mathf.Lerp(easeHealthSlider.value - 1, healthSlider.value, lerpSpeed);
         }
+
+        healthText.text = health.ToString("0|") + maxHealth.ToString();
 
     }
 
