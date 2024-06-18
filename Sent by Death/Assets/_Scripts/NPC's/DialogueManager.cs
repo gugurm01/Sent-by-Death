@@ -9,10 +9,10 @@ public class DialogueManager : MonoBehaviour
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI dialogueText;
 
+
     public Animator animator;
 
     public Queue<string> sentences;
-
 
     void Start()
     {
@@ -45,6 +45,18 @@ public class DialogueManager : MonoBehaviour
 
         string sentence = sentences.Dequeue();
         dialogueText.text = sentence;
+        StopAllCoroutines();
+        StartCoroutine(TypeLetters(sentence));
+    }
+
+    IEnumerator TypeLetters(string sentence)
+    {
+        dialogueText.text = "";
+        foreach(char letter in sentence.ToCharArray())
+        {
+            dialogueText.text += letter;
+            yield return null;
+        }
     }
 
     void EndDialogue()

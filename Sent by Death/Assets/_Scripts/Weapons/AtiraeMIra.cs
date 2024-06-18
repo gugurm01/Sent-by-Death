@@ -17,7 +17,6 @@ public class AtiraeMIra : MonoBehaviour
     private void Update()
     {
         HandleGunRotation();
-
     }
 
     private void HandleGunRotation()

@@ -7,6 +7,7 @@ TagManager:
   - Parede
   - Enemy
   - Bullet
+  - NPC
   layers:
   - Default
   - TransparentFX

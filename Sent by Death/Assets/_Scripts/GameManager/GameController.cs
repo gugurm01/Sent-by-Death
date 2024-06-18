@@ -8,11 +8,11 @@ public enum GameState
 }
 public class GameController : MonoBehaviour
 {
-    public static GameController instance;
+    public static GameController Instance;
     public GameState gameState;
     private void Awake()
     {
-        instance = this;
+        Instance = this;
     }
 
     private void Update()
@@ -21,7 +21,6 @@ public class GameController : MonoBehaviour
         {
             case GameState.Play:
                 Time.timeScale = 1.0f;
-                
                 break;
 
             case GameState.Pause:
@@ -29,4 +28,5 @@ public class GameController : MonoBehaviour
                 break;
         }
     }
+    
 }
