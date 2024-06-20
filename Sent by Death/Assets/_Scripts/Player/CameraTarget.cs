@@ -5,13 +5,18 @@ using UnityEngine;
 public class CameraTarget : MonoBehaviour
 {
     public Transform player;
-    Vector3 target, mousePos, refVel, shakeOffset;
+    public Vector3 target, mousePos, refVel, shakeOffset;
     public float cameraDist = 3.5f;
     public float smoothTime = 0.2f; private float zStart;
+    public static CameraTarget Instance;
     //shake
     float shakeMag, shakeTimeEnd;
     Vector3 shakeVector;
     bool shaking;
+    private void Awake()
+    {
+        Instance = this;
+    }
     void Start()
     {
         target = player.position; //set default target
@@ -24,7 +29,7 @@ public class CameraTarget : MonoBehaviour
         target = UpdateTargetPos(); //find out where the camera ought to be
         UpdateCameraPosition(); //smoothly move the camera closer to it's target location
     }
-    Vector3 CaptureMousePos()
+    public Vector3 CaptureMousePos()
     {
         Vector2 ret = Camera.main.ScreenToViewportPoint(Input.mousePosition); //raw mouse pos
         ret *= 2;

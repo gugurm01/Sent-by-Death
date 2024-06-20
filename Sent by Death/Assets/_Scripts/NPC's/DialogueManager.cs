@@ -9,6 +9,8 @@ public class DialogueManager : MonoBehaviour
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI dialogueText;
 
+    public GameObject mainCam;
+    public GameObject player;
 
     public Animator animator;
 
@@ -21,6 +23,12 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue)
     {
+        PlayerMove.player.rb.velocity = Vector2.zero;
+        mainCam.GetComponent<CameraTarget>().enabled = false;
+        player.GetComponentInChildren<AtiraeMIra>().enabled = false;
+        player.GetComponentInChildren<ShootAndAim>().enabled = false;
+        player.GetComponentInChildren<PlayerMove>().enabled = false;
+
         animator.SetBool("IsOpen", true);
 
         nameText.text = dialogue.name;
@@ -30,8 +38,11 @@ public class DialogueManager : MonoBehaviour
         foreach (string sentence in dialogue.sentences)
         {
             sentences.Enqueue(sentence);
+            
         }
 
+
+        
         DisplayNextSentence();
     }
 
@@ -62,6 +73,10 @@ public class DialogueManager : MonoBehaviour
     void EndDialogue()
     {
         animator.SetBool("IsOpen", false);
+        mainCam.GetComponent<CameraTarget>().enabled = true;
+        player.GetComponentInChildren<AtiraeMIra>().enabled = true;
+        player.GetComponentInChildren<ShootAndAim>().enabled = true;
+        player.GetComponentInChildren<PlayerMove>().enabled = true;
     }
 
 }

@@ -2,16 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class bullet : MonoBehaviour
+public class EnemyBullet : MonoBehaviour
 {
-    public float spd = 20f;
+    public float spd = 8f;
     public Rigidbody2D rb;
     public int dano;
-    public int danoInimigo;
 
     public ParticleSystem particula;
 
-    public static bullet Instance;
+    public static EnemyBullet Instance;
 
     private void Awake()
     {
@@ -24,8 +23,9 @@ public class bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Enemy"))
+        if (collision.CompareTag("Player"))
         {
+            PlayerLife.Instance.TakeDamage(dano);
             Destroy(this.gameObject);
         }
         if (collision.CompareTag("Parede"))
