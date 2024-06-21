@@ -618,7 +618,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.027601182, y: -0.066242725}
+  m_Offset: {x: -0.027601182, y: -0.18509564}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -629,7 +629,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.44797683, y: 0.80127174}
+  m_Size: {x: 0.44797683, y: 1.0389776}
   m_EdgeRadius: 0
 --- !u!61 &5646472523211167812
 BoxCollider2D:
@@ -644,7 +644,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.027601182, y: -0.066242725}
+  m_Offset: {x: -0.027601182, y: -0.1809972}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -655,7 +655,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.44797683, y: 0.80127174}
+  m_Size: {x: 0.44797683, y: 1.0307807}
   m_EdgeRadius: 0
 --- !u!50 &5646472523211167817
 Rigidbody2D:
@@ -691,12 +691,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
-  healthText: {fileID: 0}
-  healthSlider: {fileID: 0}
-  easeHealthSlider: {fileID: 0}
-  maxHealth: 50
-  health: 50
-  lerpSpeed: 0.001
+  rb: {fileID: 0}
   anim: {fileID: 5646472522157139514}
 --- !u!114 &5646472523211167815
 MonoBehaviour:
