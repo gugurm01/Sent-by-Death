@@ -5,7 +5,6 @@ using UnityEngine.AI;
 
 public class FollowPlayer : MonoBehaviour
 {
-    [SerializeField] Transform playerPos;
 
     NavMeshAgent agent;
     
@@ -19,6 +18,6 @@ public class FollowPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        agent.SetDestination(playerPos.position);
+        agent.SetDestination(PlayerMove.player.transform.position);
     }
 }

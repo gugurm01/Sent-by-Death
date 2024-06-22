@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8393584570286641354}
   m_Layer: 0
   m_Name: FireEnemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -110,7 +110,7 @@ NavMeshAgent:
   m_AutoRepath: 1
   m_Height: 0.2
   m_BaseOffset: 0
-  m_WalkableMask: 1
+  m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!114 &8393584570286641353
 MonoBehaviour:
@@ -124,10 +124,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ba8ceb31ba948c4591abf2cdeb3cf25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vidas: 4
+  vidas: 10
   particula: {fileID: 8546278494577566325, guid: ac6d529b64be95e4cbc0a6d6707dbf30, type: 3}
   projectile: {fileID: 7693502892733224016, guid: d27d549d7e2679748b7b44b38e52576d, type: 3}
-  playerPos: {fileID: 0}
+  playerPos: {fileID: 5646472523211167819, guid: 37d7b2b803cc72f47a467f479e622d44, type: 3}
   firePos: {fileID: 8393584571020194453}
   damage: 2
   cooldown: 0
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8586845b0caf713419c5a3411dd58dcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPos: {fileID: 0}
+  playerPos: {fileID: 5646472523211167819, guid: 37d7b2b803cc72f47a467f479e622d44, type: 3}
 --- !u!1 &8393584571020194452
 GameObject:
   m_ObjectHideFlags: 0
@@ -250,7 +250,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: -1992473649, guid: 4e276ed3873bf104aafab5de75120164, type: 3}
+  m_Sprite: {fileID: 521439439, guid: d4350bb9dc07c1a429554d366f023f45, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

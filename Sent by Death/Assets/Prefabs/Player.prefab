@@ -363,7 +363,7 @@ MonoBehaviour:
   - {x: -0.054880217, y: -0.43535262, z: 0}
   m_ShapePathHash: 1572926467
   m_Mesh: {fileID: 0}
-  m_InstanceId: 29074
+  m_InstanceId: -1296
 --- !u!1 &5646472522646174540
 GameObject:
   m_ObjectHideFlags: 0
@@ -581,6 +581,7 @@ GameObject:
   - component: {fileID: 5646472523211167817}
   - component: {fileID: 5646472523211167816}
   - component: {fileID: 5646472523211167815}
+  - component: {fileID: 8564686307460004705}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -691,7 +692,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
-  rb: {fileID: 0}
+  rb: {fileID: 5646472523211167817}
   anim: {fileID: 5646472522157139514}
 --- !u!114 &5646472523211167815
 MonoBehaviour:
@@ -719,7 +720,25 @@ MonoBehaviour:
   - {x: 0.04182066, y: -0.4337572, z: 0}
   m_ShapePathHash: 1870858165
   m_Mesh: {fileID: 0}
-  m_InstanceId: 28812
+  m_InstanceId: -1286
+--- !u!114 &8564686307460004705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5646472523211167821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87a5558b07e26ac4393fa689bf944379, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 50
+  maxHealth: 50
+  lerpSpeed: 0.0001
+  healthSlider: {fileID: 0}
+  easeHealthSlider: {fileID: 0}
+  healthText: {fileID: 0}
 --- !u!1 &5646472523260168284
 GameObject:
   m_ObjectHideFlags: 0
