@@ -7,6 +7,8 @@ public class PlayerLife : MonoBehaviour
 {
     public static PlayerLife Instance;
 
+    public GameObject gameOverPanel;
+
     public int health;
     public int maxHealth;
     public float lerpSpeed = 0.5f;
@@ -21,6 +23,7 @@ public class PlayerLife : MonoBehaviour
     }
     void Start()
     {
+        Time.timeScale = 1.0f;
         healthSlider.value = health;
     }
     void Update()
@@ -40,7 +43,13 @@ public class PlayerLife : MonoBehaviour
         health -= dano;
         if (health <= 0)
         {
-            print("die");
+            gameOverPanel.SetActive(true);
+            TimeStop();
         }
+    }
+
+    private void TimeStop()
+    {
+        Time.timeScale = 0;
     }
 }

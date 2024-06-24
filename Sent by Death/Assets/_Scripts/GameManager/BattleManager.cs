@@ -5,7 +5,7 @@ using UnityEngine;
 public class BattleManager : MonoBehaviour
 {
     public BoxCollider2D boxCollider;
-    public GameObject wall;
+    public GameObject wall, wall2, bau;
     public GameObject enemy;
     
     public static BattleManager Instance;
@@ -13,6 +13,7 @@ public class BattleManager : MonoBehaviour
     public Transform[] spawnPoints;
     public int enemiesToSpawn;
     public GameObject[] noOfEnemies;
+    public bool isFinalBattle = false;
 
     private void Start()
     {
@@ -33,6 +34,7 @@ public class BattleManager : MonoBehaviour
         if(noOfEnemies.Length > 0)
         {
             wall.SetActive(true);
+            wall2.SetActive(true);
         }
         else if (noOfEnemies.Length == 0)
         {
@@ -57,5 +59,10 @@ public class BattleManager : MonoBehaviour
     public void EndBattle()
     {
         wall.SetActive(false);
+        wall2.SetActive(false);
+        if(isFinalBattle)
+        {
+            bau.SetActive(true);
+        }
     }
 }
