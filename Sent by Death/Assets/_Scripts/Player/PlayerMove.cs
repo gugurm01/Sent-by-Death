@@ -31,6 +31,7 @@ public class PlayerMove : MonoBehaviour
 
     void Start()
     {
+        canDash = true;
         state = State.Normal;
         player = this;
         rb = GetComponent<Rigidbody2D>();
@@ -51,14 +52,13 @@ public class PlayerMove : MonoBehaviour
 
     IEnumerator Roll()
     {
-        isDashing = true;
         canDash = false;
+        moveDir = new Vector2(horizontal, vertical).normalized;
         rb.velocity = moveDir * rollSpeed;
         yield return new WaitForSeconds(rollDuration);
         state = State.Normal;
 
         yield return new WaitForSeconds(rollCooldown);
-        isDashing = false;
         canDash = true;
     }
 
@@ -76,7 +76,7 @@ public class PlayerMove : MonoBehaviour
 
         if (Input.GetButtonDown("Jump"))
         {
-            if (canDash)
+            if (!canDash)
                 return;
             state = State.Rolling;
         }
