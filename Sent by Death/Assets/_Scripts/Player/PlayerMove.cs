@@ -7,31 +7,78 @@ using TMPro;
 
 public class PlayerMove : MonoBehaviour
 {
+    private enum State
+    {
+        Normal,
+        Rolling
+    }
+
+
     public float speed;
     public Rigidbody2D rb;
     float horizontal, vertical;
     Vector2 moveDir;
+    public float rollSpeed;
+    public float rollDuration, rollCooldown;
+
+    public bool canDash, isDashing;
 
     public static PlayerMove player;
 
     public Animator anim;
-    // Start is called before the first frame update
+
+    State state;
+
     void Start()
     {
+        state = State.Normal;
         player = this;
         rb = GetComponent<Rigidbody2D>();
     }
-
-    // Update is called once per frame
     void Update()
+    {
+        switch (state) 
+        {
+            case State.Normal:
+                Movement();
+                break;
+
+            case State.Rolling:
+                StartCoroutine(Roll());
+                break;
+        }
+    }
+
+    IEnumerator Roll()
+    {
+        isDashing = true;
+        canDash = false;
+        rb.velocity = moveDir * rollSpeed;
+        yield return new WaitForSeconds(rollDuration);
+        state = State.Normal;
+
+        yield return new WaitForSeconds(rollCooldown);
+        isDashing = false;
+        canDash = true;
+    }
+
+    void Movement()
     {
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
 
         anim.SetFloat("Speed", Mathf.Abs(moveDir.x != 0 ? moveDir.x : moveDir.y));
 
-        moveDir = new Vector2 (horizontal, vertical).normalized;
+        moveDir = new Vector2(horizontal, vertical).normalized;
 
-        rb.velocity = new Vector2(moveDir.x * speed, moveDir.y * speed);
+        rb.velocity = moveDir * speed;
+
+
+        if (Input.GetButtonDown("Jump"))
+        {
+            if (canDash)
+                return;
+            state = State.Rolling;
+        }
     }
 }

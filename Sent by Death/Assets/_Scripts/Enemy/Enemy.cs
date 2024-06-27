@@ -42,7 +42,7 @@ public class Enemy : MonoBehaviour
     {
         if(collision.CompareTag("Bullet"))
         {
-            CameraShaker.Instance.ShakeOnce(3f, 3f, 0.2f, 0.2f);
+            CameraShaker.Instance.ShakeOnce(1f, 1f, 0.2f, 0.2f);
             TakeDamage(bullet.Instance.dano);
         }
     }

@@ -28,6 +28,8 @@ public class PlayerLife : MonoBehaviour
     }
     void Update()
     {
+
+
         if (healthSlider.value != easeHealthSlider.value)
         {
             easeHealthSlider.value = Mathf.Lerp(easeHealthSlider.value - 1, healthSlider.value, lerpSpeed);
@@ -43,6 +45,7 @@ public class PlayerLife : MonoBehaviour
         health -= dano;
         if (health <= 0)
         {
+            health = 0;
             gameOverPanel.SetActive(true);
             TimeStop();
         }
