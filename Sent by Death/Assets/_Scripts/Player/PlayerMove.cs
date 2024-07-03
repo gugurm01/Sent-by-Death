@@ -5,13 +5,15 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+public enum State
+{
+    Normal,
+    Rolling
+}
+
 public class PlayerMove : MonoBehaviour
 {
-    private enum State
-    {
-        Normal,
-        Rolling
-    }
+    
 
 
     public float speed;
@@ -19,7 +21,7 @@ public class PlayerMove : MonoBehaviour
     float horizontal, vertical;
     Vector2 moveDir;
     public float rollSpeed;
-    public float rollDuration, rollCooldown;
+    public float rollDuration, rollCooldown, maxCooldown;
 
     public bool canDash, isDashing;
 
@@ -27,10 +29,11 @@ public class PlayerMove : MonoBehaviour
 
     public Animator anim;
 
-    State state;
+    public static State state;
 
     void Start()
     {
+        rollCooldown = maxCooldown;
         canDash = true;
         state = State.Normal;
         player = this;
@@ -60,6 +63,7 @@ public class PlayerMove : MonoBehaviour
 
         yield return new WaitForSeconds(rollCooldown);
         canDash = true;
+        rollCooldown = maxCooldown;
     }
 
     void Movement()

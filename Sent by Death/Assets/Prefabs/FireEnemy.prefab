@@ -126,6 +126,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vidas: 10
   particula: {fileID: 8546278494577566325, guid: ac6d529b64be95e4cbc0a6d6707dbf30, type: 3}
+  spriteRenderer: {fileID: 8393584572027098689}
+  normal: {fileID: 2100000, guid: f08c10723513bc24c801b8b8e6b24cc5, type: 2}
+  hit: {fileID: 2100000, guid: 9fa50cde7e73fe749ad98aa2427972d2, type: 2}
   projectile: {fileID: 7693502892733224016, guid: d27d549d7e2679748b7b44b38e52576d, type: 3}
   playerPos: {fileID: 5646472523211167819, guid: 37d7b2b803cc72f47a467f479e622d44, type: 3}
   firePos: {fileID: 8393584571020194453}
@@ -230,7 +233,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: f08c10723513bc24c801b8b8e6b24cc5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

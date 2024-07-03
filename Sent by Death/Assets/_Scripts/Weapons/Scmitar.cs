@@ -10,10 +10,13 @@ public class Scmitar : MonoBehaviour
     public GameObject text;
 
     public float delay = 1.0f;
-    private bool block;
+    private bool block, hasAttacked;
 
+    public int damage;
 
     public static bool isAttacking;
+
+    public static Scmitar Instance;
 
     public void ResetIsAttacking()
     {
@@ -24,6 +27,7 @@ public class Scmitar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Instance = this;
         text.gameObject.SetActive(false);
     }
 
@@ -38,13 +42,21 @@ public class Scmitar : MonoBehaviour
 
     public void Attack()
     {
-
+        if(PlayerMove.state == State.Rolling)
+        {
+            block = true;
+        }
+        else
+        {
+            block = false;
+        }
         if (block)
             return;
         anim.SetTrigger("Attack");
         isAttacking = true;
         block = true;
         StartCoroutine(DalayAttack());
+        
     }
 
     private IEnumerator DalayAttack()
