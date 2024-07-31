@@ -4,18 +4,32 @@ using UnityEngine;
 
 public class BattleTrigger : MonoBehaviour
 {
-    public GameObject Battle;
-    public BoxCollider2D col;
+    [SerializeField]
+    GameObject[] enemiesToSpawnIn;
+    [SerializeField]
+    Collider2D currentRoomSpawnableArea;
+
+
+    GameObject player;
+    [SerializeField] BoxCollider2D col;
+
+    private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if(collision.gameObject == player)
         {
-            Battle.SetActive(true);
-            Destroy(col);
-            BattleManager.Instance.StartBattle();
-            Destroy(this.gameObject);
+            Vector2 exitDir = (collision.transform.position - col.bounds.center).normalized;
+
+            if (exitDir.x > 0)
+            {
+                BattleManager.instance.SpawnEnemies(currentRoomSpawnableArea, enemiesToSpawnIn);
+            }
         }
+
     }
 
 }

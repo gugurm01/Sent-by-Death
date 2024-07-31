@@ -36,7 +36,6 @@ public class Enemy : MonoBehaviour
         {
             ParticleSystem explosão = Instantiate(this.particula, new Vector3(transform.position.x, transform.position.y, -1), Quaternion.identity);
             Destroy(explosão.gameObject, 1f);
-            Time.timeScale = 1;
             Destroy(gameObject);
         }
     }
@@ -45,7 +44,7 @@ public class Enemy : MonoBehaviour
     {
         if(collision.CompareTag("Bullet"))
         {
-            CameraShaker.Instance.ShakeOnce(1f, 1f, 0.2f, 0.2f);
+            CameraShaker.Instance.ShakeOnce(2f, 2f, 0.2f, 0.2f);
             TakeDamage(bullet.Instance.dano);
         }
 
@@ -74,9 +73,7 @@ public class Enemy : MonoBehaviour
     public IEnumerator FlashHit()
     {
         spriteRenderer.material = hit;
-        Time.timeScale = 0f;
         yield return new WaitForSecondsRealtime(0.2f);
-        Time.timeScale = 1.0f;
         spriteRenderer.material = normal;
     }
 }

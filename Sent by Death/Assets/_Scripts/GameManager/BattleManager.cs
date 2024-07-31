@@ -4,65 +4,78 @@ using UnityEngine;
 
 public class BattleManager : MonoBehaviour
 {
-    public BoxCollider2D boxCollider;
-    public GameObject wall, wall2, bau;
-    public GameObject enemy;
-    
-    public static BattleManager Instance;
-    
-    public Transform[] spawnPoints;
-    public int enemiesToSpawn;
-    public GameObject[] noOfEnemies;
-    public bool isFinalBattle = false;
+    public static BattleManager instance;
 
-    private void Start()
-    {
-        Instance = this;
-    }
+    [SerializeField] LayerMask layersEnemyCannotSpawn;
 
-    private void OnTriggerExit2D(Collider2D collision)
+    private void Awake()
     {
-        if (collision.CompareTag("Player"))
+        if(instance == null)
         {
-            StartBattle();
+            instance = this;
         }
     }
 
-    private void Update()
+    public void SpawnEnemies(Collider2D spawnableAreaCollider, GameObject[] enemies)
     {
-        noOfEnemies = GameObject.FindGameObjectsWithTag("Enemy");
-        if(noOfEnemies.Length > 0)
+        foreach(GameObject enemy in enemies)
         {
-            wall.SetActive(true);
-            wall2.SetActive(true);
-        }
-        else if (noOfEnemies.Length == 0)
-        {
-            EndBattle();
+            Vector2 spawnPosition = GetRandomPointInCollider(spawnableAreaCollider);
+            GameObject spawnedEnemy = Instantiate(enemy, spawnPosition, Quaternion.identity);
         }
     }
 
-    public void StartBattle()
+    private Vector2 GetRandomSpawnPosition(Collider2D spawnableAreaCollider)
     {
-        Destroy(boxCollider);
-        for(int i = 0; i < enemiesToSpawn; i++)
+        Vector2 spawnPosition = Vector2.zero;
+        bool isSpawnPosValid = false;
+
+        int attemptCount = 0;
+        int maxAttempts = 200;
+
+
+
+        while(!isSpawnPosValid && attemptCount < maxAttempts) 
         {
-            Transform randomPos = spawnPoints[Random.Range(0, spawnPoints.Length)];
-            Instantiate(enemy, randomPos.position, Quaternion.identity);
+            spawnPosition = GetRandomPointInCollider(spawnableAreaCollider);
+            Collider2D[] colliders = Physics2D.OverlapCircleAll(spawnPosition, 2f);
+
+            bool isInvalidCollision = false;
+            foreach(Collider2D collider in colliders)
+            {
+                if (((1<<collider.gameObject.layer) & layersEnemyCannotSpawn) != 0)
+                {
+                    isInvalidCollision = true;
+                    break;
+                }
+            }
+
+            if(!isInvalidCollision)
+            {
+                isSpawnPosValid = true;
+            }
+
+            attemptCount++;
         }
-        if (noOfEnemies.Length == 0)
+
+        if (!isSpawnPosValid)
         {
-            EndBattle();
+            Debug.LogWarning("Could not find a valid spawn position");
         }
+
+        return spawnPosition;
     }
 
-    public void EndBattle()
+    private Vector2 GetRandomPointInCollider(Collider2D collider, float offset = 1f)
     {
-        wall.SetActive(false);
-        wall2.SetActive(false);
-        if(isFinalBattle)
-        {
-            bau.SetActive(true);
-        }
+        Bounds collBounds = collider.bounds;
+
+        Vector2 minBounds = new Vector2(collBounds.min.x + offset, collBounds.min.y + offset);
+        Vector2 maxBounds = new Vector2(collBounds.max.x - offset, collBounds.max.y - offset);
+
+        float randomX = Random.Range(minBounds.x, maxBounds.x);
+        float randomY = Random.Range(minBounds.y, maxBounds.y);
+
+        return new Vector2(randomX, randomY);
     }
 }
