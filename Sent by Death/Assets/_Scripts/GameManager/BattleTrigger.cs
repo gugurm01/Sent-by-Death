@@ -1,3 +1,4 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,9 @@ public class BattleTrigger : MonoBehaviour
     [SerializeField]
     Collider2D currentRoomSpawnableArea;
 
+    GameObject[] enemiesInScene;
+
+    [SerializeField] GameObject walls;
 
     GameObject player;
     [SerializeField] BoxCollider2D col;
@@ -30,6 +34,26 @@ public class BattleTrigger : MonoBehaviour
             }
         }
 
+    }
+
+    public void FixedUpdate()
+    {
+        enemiesInScene = GameObject.FindGameObjectsWithTag("Enemy");
+        Battle();
+    }
+
+    public void Battle()
+    {
+        if(enemiesInScene.Length > 0)
+        {
+            walls.SetActive(true);
+            Destroy(col);
+        }
+        else if(enemiesInScene.Length <= 0)
+        {
+            walls.SetActive(false);
+            
+        }
     }
 
 }
