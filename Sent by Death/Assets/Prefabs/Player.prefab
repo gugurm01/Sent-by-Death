@@ -725,11 +725,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 4
   rb: {fileID: 5646472523211167817}
-  rollSpeed: 0
-  rollDuration: 0
-  rollCooldown: 0
-  maxCooldown: 0
-  canDash: 0
+  rollSpeed: 10
+  rollDuration: 0.2
+  rollCooldown: 2
+  maxCooldown: 1
+  canDash: 1
   isDashing: 0
   anim: {fileID: 5646472522157139514}
 --- !u!114 &5646472523211167815

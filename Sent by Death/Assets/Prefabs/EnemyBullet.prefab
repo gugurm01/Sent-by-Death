@@ -213,7 +213,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spd: 6
   rb: {fileID: 6001979124886475561}
-  dano: 2
+  dano: 1
   particula: {fileID: 8546278494577566325, guid: ac6d529b64be95e4cbc0a6d6707dbf30, type: 3}
 --- !u!58 &-7612709045678159880
 CircleCollider2D:

@@ -132,7 +132,7 @@ MonoBehaviour:
   projectile: {fileID: 7693502892733224016, guid: d27d549d7e2679748b7b44b38e52576d, type: 3}
   playerPos: {fileID: 5646472523211167819, guid: 37d7b2b803cc72f47a467f479e622d44, type: 3}
   firePos: {fileID: 8393584571020194453}
-  damage: 2
+  damage: 1
   cooldown: 0
   projectileForce: 2
 --- !u!114 &8393584570286641354
