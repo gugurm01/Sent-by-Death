@@ -11,6 +11,8 @@ public class ShootAndAim : MonoBehaviour
 
     public TextMeshProUGUI ammoText;
 
+    [SerializeField] GameObject reloadBar;
+
     [SerializeField] float reloadTime;
     [SerializeField] int maxAmmo;
     bool isReloading = false;
@@ -53,10 +55,12 @@ public class ShootAndAim : MonoBehaviour
     {
         isReloading = true;
         ammoText.text = "Reloading...";
+        reloadBar.SetActive(true);
         print("reload");
         yield return new WaitForSeconds(reloadTime);
         currentAmmo = maxAmmo;
         isReloading = false;
+        reloadBar.SetActive(false);
         ammoText.text = currentAmmo.ToString("Ammo: 0");
     }
     void Shoot()
