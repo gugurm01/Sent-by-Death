@@ -4,7 +4,6 @@ using UnityEngine.Events;
 public class DialogueTrigger : MonoBehaviour
 {
     public Dialogue dialogue;
-    public UnityEvent startnextSentence;
     public GameObject eButton;
 
     private void OnMouseOver()

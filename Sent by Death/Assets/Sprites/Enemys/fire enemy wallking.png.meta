@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f850505ae04735a4e9b629f29278df0b
+guid: 74471e6e60d001a458fd5212d651bd1d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 24
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -67,10 +67,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 16384
+    maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: 4
-    textureCompression: 1
+    textureFormat: -1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -105,12 +105,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SparkParticle_0
+      name: fire enemy wallking_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 8
         y: 0
-        width: 32
+        width: 18
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -119,19 +119,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 593bc4158c795f446bc77d6ee1744c66
-      internalID: 645829385
+      spriteID: 9e656155fb0f21846a3d75c22fd440f0
+      internalID: 1862392454
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SparkParticle_1
+      name: fire enemy wallking_1
       rect:
         serializedVersion: 2
-        x: 32
+        x: 39
         y: 0
-        width: 32
+        width: 20
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -140,19 +140,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e5997a9ccbb5dc34393241e58e3447e5
-      internalID: -418924219
+      spriteID: 9f3b333a5e11052419c4a09ba25e4bee
+      internalID: 1799934903
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SparkParticle_2
+      name: fire enemy wallking_2
       rect:
         serializedVersion: 2
-        x: 64
+        x: 72
         y: 0
-        width: 32
+        width: 18
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -161,20 +161,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 02e4829e9abe19f4cb06894668c93c52
-      internalID: -1169032525
+      spriteID: 0971ad285211515459f62fd50e221050
+      internalID: -1845296524
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SparkParticle_3
+      name: fire enemy wallking_3
       rect:
         serializedVersion: 2
-        x: 96
+        x: 104
         y: 0
-        width: 32
-        height: 32
+        width: 17
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -182,29 +182,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6d3ef7fc8ef7c5d46ae33ac94536eed4
-      internalID: -1917600660
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SparkParticle_4
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 24587e225cd4bad469a1f03881f8d47e
-      internalID: -1601999143
+      spriteID: deae0b84aa4c5db449154ad7141afc10
+      internalID: 578077814
       vertices: []
       indices: 
       edges: []
@@ -220,11 +199,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      SparkParticle_3: -1917600660
-      SparkParticle_2: -1169032525
-      SparkParticle_1: -418924219
-      SparkParticle_0: 645829385
-      SparkParticle_4: -1601999143
+      fire enemy wallking_1: 1799934903
+      fire enemy wallking_2: -1845296524
+      fire enemy wallking_0: 1862392454
+      fire enemy wallking_3: 578077814
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

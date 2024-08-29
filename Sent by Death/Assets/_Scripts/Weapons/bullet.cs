@@ -26,6 +26,8 @@ public class bullet : MonoBehaviour
     {
         if (collision.CompareTag("Enemy"))
         {
+            ParticleSystem explosão = Instantiate(this.particula, new Vector3(transform.position.x, transform.position.y, -1), Quaternion.identity);
+            Destroy(explosão.gameObject, 1f);
             Destroy(this.gameObject);
         }
         if (collision.CompareTag("Parede"))

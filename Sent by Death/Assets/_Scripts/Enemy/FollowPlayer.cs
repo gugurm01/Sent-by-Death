@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class FollowPlayer : MonoBehaviour
 {
-
+    public Animator animator;
     NavMeshAgent agent;
     
     void Start()
@@ -19,5 +19,6 @@ public class FollowPlayer : MonoBehaviour
     void Update()
     {
         agent.SetDestination(PlayerMove.player.transform.position);
+        animator.SetFloat("Speed", agent.speed);
     }
 }

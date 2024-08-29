@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f850505ae04735a4e9b629f29278df0b
+guid: 79bb9366212c45748be66f5eef9bd3ba
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -67,10 +67,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 16384
+    maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: 4
-    textureCompression: 1
+    textureFormat: -1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -105,13 +105,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SparkParticle_0
+      name: Fireball_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 1
         y: 0
-        width: 32
-        height: 32
+        width: 13
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -119,20 +119,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 593bc4158c795f446bc77d6ee1744c66
-      internalID: 645829385
+      spriteID: d24b5bcea1e7d984cb96213cc8f1b7f0
+      internalID: 1431775491
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SparkParticle_1
+      name: Fireball_1
       rect:
         serializedVersion: 2
-        x: 32
+        x: 17
         y: 0
-        width: 32
-        height: 32
+        width: 12
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,20 +140,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e5997a9ccbb5dc34393241e58e3447e5
-      internalID: -418924219
+      spriteID: 161091106d677e849a5e80f36f10b2e2
+      internalID: 340472232
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SparkParticle_2
+      name: Fireball_2
       rect:
         serializedVersion: 2
-        x: 64
+        x: 34
         y: 0
-        width: 32
-        height: 32
+        width: 13
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -161,20 +161,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 02e4829e9abe19f4cb06894668c93c52
-      internalID: -1169032525
+      spriteID: ce85d184abd4e04469d32657b372a79f
+      internalID: -1192493821
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SparkParticle_3
+      name: Fireball_3
       rect:
         serializedVersion: 2
-        x: 96
+        x: 51
         y: 0
-        width: 32
-        height: 32
+        width: 12
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -182,29 +182,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6d3ef7fc8ef7c5d46ae33ac94536eed4
-      internalID: -1917600660
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SparkParticle_4
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 24587e225cd4bad469a1f03881f8d47e
-      internalID: -1601999143
+      spriteID: dd4ca933559713c408ebf7ea1c68029e
+      internalID: 1662727309
       vertices: []
       indices: 
       edges: []
@@ -220,11 +199,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      SparkParticle_3: -1917600660
-      SparkParticle_2: -1169032525
-      SparkParticle_1: -418924219
-      SparkParticle_0: 645829385
-      SparkParticle_4: -1601999143
+      Fireball_3: 1662727309
+      Fireball_2: -1192493821
+      Fireball_0: 1431775491
+      Fireball_1: 340472232
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
