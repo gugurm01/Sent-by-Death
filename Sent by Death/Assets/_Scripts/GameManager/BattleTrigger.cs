@@ -24,7 +24,7 @@ public class BattleTrigger : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if(collision.gameObject == player)
+        if(collision.CompareTag("Player"))
         {
             Vector2 exitDir = (collision.transform.position - col.bounds.center).normalized;
 
@@ -52,7 +52,6 @@ public class BattleTrigger : MonoBehaviour
         else if(enemiesInScene.Length <= 0)
         {
             walls.SetActive(false);
-            
         }
     }
 

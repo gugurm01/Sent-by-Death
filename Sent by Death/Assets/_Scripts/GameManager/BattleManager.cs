@@ -10,10 +10,7 @@ public class BattleManager : MonoBehaviour
 
     private void Awake()
     {
-        if(instance == null)
-        {
-            instance = this;
-        }
+        instance = this;
     }
 
     public void SpawnEnemies(Collider2D spawnableAreaCollider, GameObject[] enemies)

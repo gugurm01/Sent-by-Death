@@ -1,9 +1,9 @@
-using EZCameraShake;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using EZCameraShake;
 
-public class Enemy : MonoBehaviour
+public class Enemy3Tiros : MonoBehaviour
 {
     public int vidas;
     public ParticleSystem particula;
@@ -42,7 +42,7 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Bullet"))
+        if (collision.CompareTag("Bullet"))
         {
             CameraShaker.Instance.ShakeOnce(2f, 2f, 0.2f, 0.2f);
             TakeDamage(bullet.Instance.dano);
@@ -57,15 +57,22 @@ public class Enemy : MonoBehaviour
 
     public IEnumerator ShootPlayer()
     {
-        cooldown = Random.Range(0, 5);
+        cooldown = Random.Range(0.3f, 2);
         yield return new WaitForSeconds(cooldown);
-        if(playerPos != null)
+        if (playerPos != null)
         {
-            
+
             Instantiate(projectile, firePos.position, firePos.rotation);
             Vector2 myPos = transform.position;
             Vector2 targetPos = playerPos.position;
             Vector2 dir = (targetPos - myPos).normalized;
+
+            Vector2 rightDir = Quaternion.Euler(0, 0, 15) * dir;
+            Instantiate(projectile, firePos.position, Quaternion.LookRotation(Vector3.forward, rightDir));
+
+            // Spawn do projetil à esquerda
+            Vector2 leftDir = Quaternion.Euler(0, 0, -15) * dir;
+            Instantiate(projectile, firePos.position, Quaternion.LookRotation(Vector3.forward, leftDir));
             StartCoroutine(ShootPlayer());
         }
     }
