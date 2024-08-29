@@ -13,15 +13,13 @@ public enum State
 
 public class PlayerMove : MonoBehaviour
 {
-    
-
-
     public float speed;
     public Rigidbody2D rb;
     float horizontal, vertical;
     Vector2 moveDir;
     public float rollSpeed;
     public float rollDuration, rollCooldown, maxCooldown;
+    public GameObject walkSound;
 
     public bool canDash, isDashing;
 
@@ -77,6 +75,14 @@ public class PlayerMove : MonoBehaviour
 
         rb.velocity = moveDir * speed;
 
+        if(Mathf.Abs(moveDir.x != 0 ? moveDir.x : moveDir.y) > 0)
+        {
+            walkSound.SetActive(true);
+        }
+        else 
+        { 
+            walkSound.SetActive(false); 
+        }
 
         if (Input.GetButtonDown("Jump"))
         {
