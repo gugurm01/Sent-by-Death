@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class BattleTrigger : MonoBehaviour
 {
+    public bool isTrigged;
     [SerializeField]
     GameObject[] enemiesToSpawnIn;
     [SerializeField]
@@ -31,6 +32,7 @@ public class BattleTrigger : MonoBehaviour
             if (exitDir.x > 0)
             {
                 BattleManager.instance.SpawnEnemies(currentRoomSpawnableArea, enemiesToSpawnIn);
+                isTrigged = true;
             }
         }
 
@@ -44,14 +46,17 @@ public class BattleTrigger : MonoBehaviour
 
     public void Battle()
     {
-        if(enemiesInScene.Length > 0)
+        if (isTrigged)
         {
-            walls.SetActive(true);
-            Destroy(col);
-        }
-        else if(enemiesInScene.Length <= 0)
-        {
-            walls.SetActive(false);
+            if (enemiesInScene.Length > 0)
+            {
+                walls.SetActive(true);
+                Destroy(col);
+            }
+            else if (enemiesInScene.Length <= 0)
+            {
+                walls.SetActive(false);
+            }
         }
     }
 
