@@ -27,13 +27,18 @@ public class BattleTrigger : MonoBehaviour
     {
         if(collision.CompareTag("Player"))
         {
-            Vector2 exitDir = (collision.transform.position - col.bounds.center).normalized;
+            //Vector2 exitDir = (collision.transform.position - col.bounds.center).normalized;
 
-            if (exitDir.x > 0)
-            {
+            //if (exitDir.x > 0)
+            //{
                 BattleManager.instance.SpawnEnemies(currentRoomSpawnableArea, enemiesToSpawnIn);
                 isTrigged = true;
-            }
+            //}
+            //else if (exitDir.y > 0)
+            //{
+                //BattleManager.instance.SpawnEnemies(currentRoomSpawnableArea, enemiesToSpawnIn);
+                //isTrigged = true;
+            //}
         }
 
     }
@@ -56,6 +61,7 @@ public class BattleTrigger : MonoBehaviour
             else if (enemiesInScene.Length <= 0)
             {
                 walls.SetActive(false);
+                Destroy(gameObject);
             }
         }
     }

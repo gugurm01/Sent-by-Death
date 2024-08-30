@@ -23,6 +23,7 @@ public class PlayerLife : MonoBehaviour
 
     private void Awake()
     {
+        Time.timeScale = 1f;
         Instance = this;
     }
 
@@ -36,6 +37,7 @@ public class PlayerLife : MonoBehaviour
         {
             health = 0;
             gameOverPanel.SetActive(true);
+            Time.timeScale = 0f;
         }
     }
 
