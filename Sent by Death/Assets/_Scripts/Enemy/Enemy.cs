@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    public AudioSource source;
     public int vidas;
     public ParticleSystem particula;
     [SerializeField] SpriteRenderer spriteRenderer;
@@ -22,18 +23,14 @@ public class Enemy : MonoBehaviour
         cooldown = Random.Range(1, 4);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     public void TakeDamage(int damage)
     {
         vidas -= damage;
+        source.Play();
         StartCoroutine(FlashHit());
         if (vidas <= 0)
         {
+            source.Play();
             ParticleSystem explosão = Instantiate(this.particula, new Vector3(transform.position.x, transform.position.y, -1), Quaternion.identity);
             Destroy(explosão.gameObject, 1f);
             Destroy(gameObject);

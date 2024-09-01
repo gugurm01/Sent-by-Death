@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class BossLife : MonoBehaviour
 {
+    public AudioSource source;
     public int maxVidas;
     public int vidas;
     NavMeshAgent agent;
@@ -50,6 +51,7 @@ public class BossLife : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        source.Play();
         vidas -= damage;
         if(vidas <= metadeDaVida)
         {
@@ -59,6 +61,7 @@ public class BossLife : MonoBehaviour
         StartCoroutine(FlashHit());
         if (vidas <= 0)
         {
+            source.Play();
             ParticleSystem explosão = Instantiate(this.particula, new Vector3(transform.position.x, transform.position.y, -1), Quaternion.identity);
             Destroy(explosão.gameObject, 1f);
             Destroy(gameObject);

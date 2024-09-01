@@ -9,6 +9,8 @@ public class PlayerLife : MonoBehaviour
 {
     public static PlayerLife Instance;
 
+    public AudioSource damage, heal, die;
+
     public ParticleSystem healParticle;
 
     public bool invunerable;
@@ -38,12 +40,14 @@ public class PlayerLife : MonoBehaviour
 
         CameraShaker.Instance.ShakeOnce(10f, 10f, .3f, .3f);
         health -= dano;
+        damage.Play();
         StartCoroutine(Flash());
         OnPlayerDamaged?.Invoke();
         if (health <= 0)
         {
             health = 0;
             gameOverPanel.SetActive(true);
+            die.Play();
             Time.timeScale = 0f;
         }
     }
@@ -51,6 +55,7 @@ public class PlayerLife : MonoBehaviour
     public void Heal()
     {
         health = maxHealth;
+        heal.Play();
         OnPlayerDamaged?.Invoke();
         StartCoroutine(Flash());
         ParticleSystem explosão = Instantiate(this.healParticle, new Vector3(transform.position.x, transform.position.y, -1), Quaternion.identity);

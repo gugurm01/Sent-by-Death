@@ -5,6 +5,7 @@ using EZCameraShake;
 
 public class Enemy3Tiros : MonoBehaviour
 {
+    public AudioSource source;
     public int vidas;
     public ParticleSystem particula;
     [SerializeField] SpriteRenderer spriteRenderer;
@@ -31,9 +32,11 @@ public class Enemy3Tiros : MonoBehaviour
     public void TakeDamage(int damage)
     {
         vidas -= damage;
+        source.Play();
         StartCoroutine(FlashHit());
         if (vidas <= 0)
         {
+            source.Play();
             ParticleSystem explosão = Instantiate(this.particula, new Vector3(transform.position.x, transform.position.y, -1), Quaternion.identity);
             Destroy(explosão.gameObject, 1f);
             Destroy(gameObject);

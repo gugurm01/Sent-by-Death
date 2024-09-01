@@ -23,7 +23,7 @@ public class ShootAndAim : MonoBehaviour
         text.SetActive(true);
 
         currentAmmo = maxAmmo;
-        ammoText.text = currentAmmo.ToString("Ammo: 0");
+        ammoText.text = currentAmmo.ToString("Facas: 0");
     }
     void Update()
     {
@@ -54,20 +54,20 @@ public class ShootAndAim : MonoBehaviour
     IEnumerator Reload()
     {
         isReloading = true;
-        ammoText.text = "Reloading...";
+        ammoText.text = "Recarregando...";
         reloadBar.SetActive(true);
         print("reload");
         yield return new WaitForSeconds(reloadTime);
         currentAmmo = maxAmmo;
         isReloading = false;
         reloadBar.SetActive(false);
-        ammoText.text = currentAmmo.ToString("Ammo: 0");
+        ammoText.text = currentAmmo.ToString("Facas: 0");
     }
     void Shoot()
     {
         anim.SetTrigger("Fire");
         Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         currentAmmo--;
-        ammoText.text = currentAmmo.ToString("Ammo: 0");
+        ammoText.text = currentAmmo.ToString("Facas: 0");
     }
 }
