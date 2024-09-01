@@ -594,7 +594,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 3815095098285856544}
   attackDistance: 2
-  playerTransform: {fileID: 5646472523211167819, guid: 37d7b2b803cc72f47a467f479e622d44, type: 3}
 --- !u!1 &3815095098285856549
 GameObject:
   m_ObjectHideFlags: 0
@@ -860,7 +859,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 7693502892733224016, guid: d27d549d7e2679748b7b44b38e52576d, type: 3}
   type: 1
   spin: 2
-  fireRate: 0.2
+  fireRate: 0.4
 --- !u!1 &3815095098823295641
 GameObject:
   m_ObjectHideFlags: 0
