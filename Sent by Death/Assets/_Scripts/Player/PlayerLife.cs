@@ -4,6 +4,7 @@ using TMPro;
 using EZCameraShake;
 using System;
 using System.Collections;
+using UnityEngine.Events;
 
 public class PlayerLife : MonoBehaviour
 {
@@ -23,6 +24,10 @@ public class PlayerLife : MonoBehaviour
 
     [SerializeField] SpriteRenderer spriteRenderer, weapon;
 
+    public Transform weapons;
+
+    public UnityEvent StartWeapon;
+
     public int health;
     public int maxHealth;
     public float lerpSpeed = 0.5f;
@@ -31,6 +36,11 @@ public class PlayerLife : MonoBehaviour
     {
         Time.timeScale = 1f;
         Instance = this;
+    }
+
+    private void Start()
+    {
+        StartWeapon.Invoke();
     }
 
     public void TakeDamage(int dano)
@@ -66,10 +76,18 @@ public class PlayerLife : MonoBehaviour
     {
         invunerable = true;
         spriteRenderer.material = hit;
-        weapon.material = hit;
         yield return new WaitForSecondsRealtime(0.2f);
         spriteRenderer.material = normal;
-        weapon.material = normal;
         invunerable = false;
+    }
+
+    public void SetPause()
+    {
+        if (Time.timeScale == 0)
+        {
+            Time.timeScale = 1;
+        }
+        else
+            Time.timeScale = 0;
     }
 }

@@ -14,6 +14,11 @@ public class AtiraeMIra : MonoBehaviour
     private Vector2 worldPosition;
     private Vector2 direction;
 
+    private void Start()
+    {
+        playerSR = GetComponentInParent<SpriteRenderer>();
+    }
+
     private void Update()
     {
         HandleGunRotation();
@@ -41,7 +46,7 @@ public class AtiraeMIra : MonoBehaviour
 
         transform.localScale = scale;
 
-        if(transform.eulerAngles.z > 90 && transform.eulerAngles.z < 270)
+        /*if(transform.eulerAngles.z > 90 && transform.eulerAngles.z < 270)
         {
             gunSR.sortingOrder = playerSR.sortingOrder - 1;
             playerSR.flipX = true;
@@ -50,6 +55,6 @@ public class AtiraeMIra : MonoBehaviour
         {
             gunSR.sortingOrder = playerSR.sortingOrder + 1;
             playerSR.flipX = false;
-        }
+        }*/
     }
 }
