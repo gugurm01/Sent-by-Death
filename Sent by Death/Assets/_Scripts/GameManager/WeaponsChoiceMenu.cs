@@ -5,21 +5,27 @@ using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
+
 
 public class WeaponsChoiceMenu : MonoBehaviour
 {
     public TMP_Text[] weaponName = new TMP_Text[4];
+    public Image[] weaponIcons = new Image[4];
     GameObject[] choicedWeapon = new GameObject[4];
+    Sprite[] choicedWeaponImage = new Sprite[4];
     public UnityEvent OnLuck;
     public static int luck;
     void Start()
     {
-        List<GameObject> weapons = Database.Instance.weapons.ToList();
+        List<Weapon>weapons = Database.Instance.weapons.ToList();
         for (int i = 0; i < weaponName.Length; i++) 
         {
             int randomNumber = Random.Range(0, weapons.Count);
-            choicedWeapon[i] = weapons[randomNumber];
+            choicedWeapon[i] = weapons[randomNumber].prefab;
+            choicedWeaponImage[i] = weapons[randomNumber].sprite;
             weapons.RemoveAt(randomNumber);
+            weaponIcons[i].sprite = choicedWeaponImage[i];
             weaponName[i].text = choicedWeapon[i].name;
             
             if (i == 2)
