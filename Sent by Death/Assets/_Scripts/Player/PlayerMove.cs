@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Controls;
 
 public enum State
 {
@@ -13,10 +15,18 @@ public enum State
 
 public class PlayerMove : MonoBehaviour
 {
+    public SpriteRenderer playerSR, gunSR;
+
+    public Transform t;
+
+    private Vector2 worldPosition;
+    private Vector2 direction;
+
     public float speed;
     public Rigidbody2D rb;
     float horizontal, vertical;
     Vector2 moveDir;
+    public Vector2 move;
     public float rollSpeed;
     public float rollDuration, rollCooldown, maxCooldown;
     public GameObject walkSound;
@@ -49,6 +59,7 @@ public class PlayerMove : MonoBehaviour
                 StartCoroutine(Roll());
                 break;
         }
+
     }
 
     IEnumerator Roll()
@@ -56,6 +67,7 @@ public class PlayerMove : MonoBehaviour
         canDash = false;
         moveDir = new Vector2(horizontal, vertical).normalized;
         rb.velocity = moveDir * rollSpeed;
+        rb.velocity = moveDir * Mathf.Lerp(rollSpeed, speed, rollDuration);
         yield return new WaitForSeconds(rollDuration);
         state = State.Normal;
 
@@ -89,6 +101,18 @@ public class PlayerMove : MonoBehaviour
             if (!canDash)
                 return;
             state = State.Rolling;
+        }
+
+        worldPosition = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+        direction = (worldPosition - (Vector2)t.position).normalized;
+
+        if(direction.x > 0)
+        {
+            playerSR.flipX = false;
+        }
+        else
+        {
+            playerSR.flipX = true;
         }
     }
 }

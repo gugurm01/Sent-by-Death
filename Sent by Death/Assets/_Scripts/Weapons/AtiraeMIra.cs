@@ -5,7 +5,6 @@ using UnityEngine.InputSystem;
 
 public class AtiraeMIra : MonoBehaviour
 {
-    public SpriteRenderer playerSR, gunSR;
 
     [SerializeField] private GameObject gun;
 
@@ -13,11 +12,6 @@ public class AtiraeMIra : MonoBehaviour
 
     private Vector2 worldPosition;
     private Vector2 direction;
-
-    private void Start()
-    {
-        playerSR = GetComponentInParent<SpriteRenderer>();
-    }
 
     private void Update()
     {
