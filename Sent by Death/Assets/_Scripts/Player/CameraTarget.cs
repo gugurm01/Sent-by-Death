@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class CameraTarget : MonoBehaviour
 {
+    public InputAction inputAction;
+
     public Transform player;
     public Vector3 target, mousePos, refVel, shakeOffset;
     public float cameraDist = 3.5f;
@@ -31,9 +34,9 @@ public class CameraTarget : MonoBehaviour
     }
     public Vector3 CaptureMousePos()
     {
-        Vector2 ret = Camera.main.ScreenToViewportPoint(Input.mousePosition); //raw mouse pos
+        Vector2 ret = inputAction.ReadValue<Vector2>(); //raw mouse pos
         ret *= 2;
-        ret -= Vector2.one; //set (0,0) of mouse to middle of screen
+        ret -= Vector2.zero; //set (0,0) of mouse to middle of screen
         float max = 0.9f;
         if (Mathf.Abs(ret.x) > max || Mathf.Abs(ret.y) > max)
         {

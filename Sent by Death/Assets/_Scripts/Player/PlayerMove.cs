@@ -22,10 +22,12 @@ public class PlayerMove : MonoBehaviour
     private Vector2 worldPosition;
     private Vector2 direction;
 
+    public InputAction inputAction;
+
     public float speed;
     public Rigidbody2D rb;
     float horizontal, vertical;
-    Vector2 moveDir;
+    Vector2 moveDir = Vector2.zero;
     public Vector2 move;
     public float rollSpeed;
     public float rollDuration, rollCooldown, maxCooldown;
@@ -38,6 +40,16 @@ public class PlayerMove : MonoBehaviour
     public Animator anim;
 
     public static State state;
+
+    private void OnEnable()
+    {
+        inputAction.Enable();
+    }
+
+    private void OnDisable()
+    {
+        inputAction.Disable();
+    }
 
     void Start()
     {
@@ -65,9 +77,8 @@ public class PlayerMove : MonoBehaviour
     IEnumerator Roll()
     {
         canDash = false;
-        moveDir = new Vector2(horizontal, vertical).normalized;
+        moveDir = inputAction.ReadValue<Vector2>();
         rb.velocity = moveDir * rollSpeed;
-        rb.velocity = moveDir * Mathf.Lerp(rollSpeed, speed, rollDuration);
         yield return new WaitForSeconds(rollDuration);
         state = State.Normal;
 
@@ -78,12 +89,12 @@ public class PlayerMove : MonoBehaviour
 
     void Movement()
     {
-        horizontal = Input.GetAxisRaw("Horizontal");
-        vertical = Input.GetAxisRaw("Vertical");
+        //horizontal = Input.GetAxisRaw("Horizontal");
+        //vertical = Input.GetAxisRaw("Vertical");
 
         anim.SetFloat("Speed", Mathf.Abs(moveDir.x != 0 ? moveDir.x : moveDir.y));
 
-        moveDir = new Vector2(horizontal, vertical).normalized;
+        moveDir = inputAction.ReadValue<Vector2>();
 
         rb.velocity = moveDir * speed;
 
