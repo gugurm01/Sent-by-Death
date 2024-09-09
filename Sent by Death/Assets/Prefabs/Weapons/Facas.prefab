@@ -196,7 +196,7 @@ MonoBehaviour:
   - {x: -0.082521215, y: 0.027335063, z: 0}
   m_ShapePathHash: -662808154
   m_Mesh: {fileID: 0}
-  m_InstanceId: 102322
+  m_InstanceId: 89680
 --- !u!1 &3096798617095328853
 GameObject:
   m_ObjectHideFlags: 0
@@ -246,9 +246,58 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a50f7815718cd44aa1279099b279d98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSR: {fileID: 0}
-  gunSR: {fileID: 3096798617657042283}
+  input:
+    m_Name: Input
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 232aefa4-6a46-4460-8061-ee1dd4965dc4
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: Right Stic
+      m_Id: d1ac8c97-c3c0-4e98-b034-349642c85646
+      m_Path: 2DVector
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Input
+      m_Flags: 4
+    - m_Name: up
+      m_Id: 78017844-8be0-412d-af8f-0377049a0305
+      m_Path: <Gamepad>/rightStick/up
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Input
+      m_Flags: 8
+    - m_Name: down
+      m_Id: 35e4daeb-1389-4051-993b-85239441f89c
+      m_Path: <Gamepad>/rightStick/down
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Input
+      m_Flags: 8
+    - m_Name: left
+      m_Id: feb09ff4-c1e5-4ede-92ba-6f9f7c738524
+      m_Path: <Gamepad>/rightStick/left
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Input
+      m_Flags: 8
+    - m_Name: right
+      m_Id: e35cf90c-df39-48ed-8b7d-657d69757a59
+      m_Path: <Gamepad>/rightStick/right
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Input
+      m_Flags: 8
+    m_Flags: 0
   gun: {fileID: 3096798617095328853}
+  move: {x: 0, y: 0}
+  worldPosition: {x: 0, y: 0}
 --- !u!1 &3096798617657042285
 GameObject:
   m_ObjectHideFlags: 0

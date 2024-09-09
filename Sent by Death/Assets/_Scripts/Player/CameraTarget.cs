@@ -9,6 +9,9 @@ public class CameraTarget : MonoBehaviour
 
     public Transform player;
     public Vector3 target, mousePos, refVel, shakeOffset;
+
+    public Vector2 move;
+
     public float cameraDist = 3.5f;
     public float smoothTime = 0.2f; private float zStart;
     public static CameraTarget Instance;
@@ -34,7 +37,9 @@ public class CameraTarget : MonoBehaviour
     }
     public Vector3 CaptureMousePos()
     {
-        Vector2 ret = Camera.main.ScreenToViewportPoint(Input.mousePosition); //raw mouse pos
+        move = Gamepad.current.rightStick.ReadValue();
+
+        Vector2 ret = move; //raw mouse pos
         ret *= 2;
         ret -= Vector2.zero; //set (0,0) of mouse to middle of screen
         float max = 0.9f;

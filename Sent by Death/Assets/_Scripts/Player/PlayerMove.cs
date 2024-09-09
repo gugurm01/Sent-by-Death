@@ -114,8 +114,10 @@ public class PlayerMove : MonoBehaviour
             state = State.Rolling;
         }
 
+        move = Gamepad.current.rightStick.ReadValue();
+
         worldPosition = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
-        direction = (worldPosition - (Vector2)t.position).normalized;
+        direction = move;
 
         if(direction.x > 0)
         {

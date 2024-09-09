@@ -5,11 +5,13 @@ using UnityEngine.InputSystem;
 
 public class AtiraeMIra : MonoBehaviour
 {
+    public InputAction input;
+
     [SerializeField] private GameObject gun;
 
-    Transform weaponParent;
+    public Vector2 move;
 
-    private Vector2 worldPosition;
+    public Vector2 worldPosition;
     private Vector2 direction;
 
     private void Update()
@@ -22,9 +24,10 @@ public class AtiraeMIra : MonoBehaviour
         if(Scmitar.isAttacking == true)
             return;
 
+        move = Gamepad.current.rightStick.ReadValue();
 
-        worldPosition = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue()); 
-        direction = (worldPosition - (Vector2)gun.transform.position).normalized;
+        worldPosition = move;
+        direction = move;
         gun.transform.right = direction;
 
         Vector2 scale = transform.localScale;
