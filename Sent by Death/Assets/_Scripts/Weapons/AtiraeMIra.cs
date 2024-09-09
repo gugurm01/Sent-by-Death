@@ -5,7 +5,6 @@ using UnityEngine.InputSystem;
 
 public class AtiraeMIra : MonoBehaviour
 {
-
     [SerializeField] private GameObject gun;
 
     Transform weaponParent;
@@ -23,8 +22,8 @@ public class AtiraeMIra : MonoBehaviour
         if(Scmitar.isAttacking == true)
             return;
 
-        
-        worldPosition = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+
+        worldPosition = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue()); 
         direction = (worldPosition - (Vector2)gun.transform.position).normalized;
         gun.transform.right = direction;
 

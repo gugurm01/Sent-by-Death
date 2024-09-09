@@ -34,7 +34,7 @@ public class CameraTarget : MonoBehaviour
     }
     public Vector3 CaptureMousePos()
     {
-        Vector2 ret = inputAction.ReadValue<Vector2>(); //raw mouse pos
+        Vector2 ret = Camera.main.ScreenToViewportPoint(Input.mousePosition); //raw mouse pos
         ret *= 2;
         ret -= Vector2.zero; //set (0,0) of mouse to middle of screen
         float max = 0.9f;

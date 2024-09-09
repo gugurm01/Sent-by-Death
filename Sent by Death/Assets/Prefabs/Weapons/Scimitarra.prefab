@@ -121,7 +121,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 654126528901665339}
-  text: {fileID: 3053635493180640351}
   delay: 0.3
   damage: 1
 --- !u!114 &654126528901665333
@@ -197,8 +196,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a50f7815718cd44aa1279099b279d98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSR: {fileID: 0}
-  gunSR: {fileID: 654126528901665337}
+  input:
+    m_Name: Input
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: a10c9a39-c1d2-4031-8d17-5f41e6ac1f80
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: Right Stick
+      m_Id: dd81f1cd-a79d-49cc-93d0-7b81dce820c4
+      m_Path: 2DVector
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Input
+      m_Flags: 4
+    - m_Name: up
+      m_Id: ef28a874-9e23-4ceb-ab26-203c61a4cdd8
+      m_Path: <Gamepad>/rightStick/up
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Input
+      m_Flags: 8
+    - m_Name: down
+      m_Id: 2c749a0d-2631-4a60-8161-17660e8ad262
+      m_Path: <Gamepad>/rightStick/down
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Input
+      m_Flags: 8
+    - m_Name: left
+      m_Id: 7e3f8d37-c886-4161-8b9d-f56e4c0250b6
+      m_Path: <Gamepad>/rightStick/left
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Input
+      m_Flags: 8
+    - m_Name: right
+      m_Id: cd1faeff-b40a-488c-94fd-72b9a4f69ebf
+      m_Path: <Gamepad>/rightStick/right
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Input
+      m_Flags: 8
+    m_Flags: 0
   gun: {fileID: 654126529338695299}
 --- !u!1 &654126529751037511
 GameObject:
@@ -491,10 +537,5 @@ PrefabInstance:
 --- !u!224 &3053635492919850999 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4666556595678568366, guid: d9a74ce0a1add884fb316bea5299a987, type: 3}
-  m_PrefabInstance: {fileID: 7683775599880333401}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &3053635493180640351 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4666556595384148998, guid: d9a74ce0a1add884fb316bea5299a987, type: 3}
   m_PrefabInstance: {fileID: 7683775599880333401}
   m_PrefabAsset: {fileID: 0}
