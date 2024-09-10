@@ -25,7 +25,7 @@ public class CameraTarget : MonoBehaviour
     }
     void Start()
     {
-        target = player.position; //set default target
+        target = PlayerLife.Instance.transform.position; //set default target
         zStart = transform.position.z; //capture current z position
     }
     void Update()
