@@ -114,16 +114,22 @@ public class PlayerMove : MonoBehaviour
             state = State.Rolling;
         }
 
-        move = Gamepad.current.rightStick.ReadValue();
-
-        worldPosition = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
-        direction = move;
+        if (GameManager.Instance.controller)
+        {
+            move = Gamepad.current.rightStick.ReadValue();
+            direction = move;
+        }
+        else
+        {
+            worldPosition = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+            direction = (worldPosition - (Vector2)this.transform.position).normalized;
+        }
 
         if(direction.x > 0)
         {
             playerSR.flipX = false;
         }
-        else
+        else if(direction.x < 0)
         {
             playerSR.flipX = true;
         }

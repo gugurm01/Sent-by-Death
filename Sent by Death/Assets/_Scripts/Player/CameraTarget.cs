@@ -37,10 +37,21 @@ public class CameraTarget : MonoBehaviour
     }
     public Vector3 CaptureMousePos()
     {
-        move = Gamepad.current.rightStick.ReadValue();
+        Vector2 ret;
 
-        Vector2 ret = move; //raw mouse pos
-        ret *= 2;
+        if (GameManager.Instance.controller)
+        {
+            move = Gamepad.current.rightStick.ReadValue();
+
+            ret = move;
+        }
+        else
+        {
+            ret = Camera.main.ScreenToViewportPoint(Input.mousePosition);
+        }
+
+         //raw mouse pos
+        
         ret -= Vector2.zero; //set (0,0) of mouse to middle of screen
         float max = 0.9f;
         if (Mathf.Abs(ret.x) > max || Mathf.Abs(ret.y) > max)

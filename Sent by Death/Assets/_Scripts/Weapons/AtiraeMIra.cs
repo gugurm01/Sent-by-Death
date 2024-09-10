@@ -24,10 +24,16 @@ public class AtiraeMIra : MonoBehaviour
         if(Scmitar.isAttacking == true)
             return;
 
-        move = Gamepad.current.rightStick.ReadValue();
-
-        worldPosition = move;
-        direction = move;
+        if (GameManager.Instance.controller)
+        {
+            move = Gamepad.current.rightStick.ReadValue();
+            direction = move;
+        }
+        else
+        {
+            worldPosition = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+            direction = (worldPosition - (Vector2)this.transform.position).normalized;
+        }
         gun.transform.right = direction;
 
         Vector2 scale = transform.localScale;
