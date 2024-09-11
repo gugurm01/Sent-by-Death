@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class HealFlasks : MonoBehaviour
 {
+    public static HealFlasks instance;
+
     public int maxFlasks = 6;
     public int currentFlasks;
     public float flaskCooldown = 60f; // 60 segundos
@@ -13,6 +15,11 @@ public class HealFlasks : MonoBehaviour
 
     public Slider cooldownSlider;
     public TextMeshProUGUI flaskCount;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     void Start()
     {
@@ -23,23 +30,6 @@ public class HealFlasks : MonoBehaviour
 
     void Update()
     {
-        // Regenerar um frasco a cada 60 segundos
-        if (currentFlasks < maxFlasks)
-        {
-            flaskTimer += Time.deltaTime;
-            UpdateSlider();
-
-            if (flaskTimer >= flaskCooldown)
-            {
-                currentFlasks++;
-                flaskTimer = 0;
-            }
-        }
-        if(currentFlasks >= maxFlasks)
-        {
-            currentFlasks = maxFlasks;
-            UpdateSlider();
-        }
 
         // Uso do frasco ao pressionar Tab
         if (Input.GetKeyDown(KeyCode.Tab))
@@ -54,6 +44,27 @@ public class HealFlasks : MonoBehaviour
         {
             currentFlasks--;
             PlayerLife.Instance.Heal();
+            UpdateSlider();
+        }
+    }
+
+    public void Gain(float amount)
+    {
+        // Regenerar um frasco a cada 60 segundos
+        if (currentFlasks < maxFlasks)
+        {
+            flaskTimer += amount;
+            UpdateSlider();
+
+            if (flaskTimer >= flaskCooldown)
+            {
+                currentFlasks++;
+                flaskTimer = 0;
+            }
+        }
+        if (currentFlasks >= maxFlasks)
+        {
+            currentFlasks = maxFlasks;
             UpdateSlider();
         }
     }

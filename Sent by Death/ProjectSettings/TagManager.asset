@@ -10,6 +10,7 @@ TagManager:
   - NPC
   - EnemyBullet
   - Sword
+  - Magnetic
   layers:
   - Default
   - TransparentFX

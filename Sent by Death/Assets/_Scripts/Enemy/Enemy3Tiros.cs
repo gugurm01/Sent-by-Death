@@ -11,6 +11,7 @@ public class Enemy3Tiros : MonoBehaviour
     [SerializeField] SpriteRenderer spriteRenderer;
 
     [SerializeField] Material normal, hit;
+    public GameObject coinPrefab;
 
     public GameObject projectile;
     public Transform playerPos, firePos;
@@ -37,6 +38,11 @@ public class Enemy3Tiros : MonoBehaviour
         if (vidas <= 0)
         {
             source.Play();
+            int randomNumber = Random.Range(1, 100);
+            if (randomNumber <= 50)
+            {
+                Instantiate(coinPrefab, new Vector3(transform.position.x, transform.position.y, -1), Quaternion.identity);
+            }
             ParticleSystem explosão = Instantiate(this.particula, new Vector3(transform.position.x, transform.position.y, -1), Quaternion.identity);
             Destroy(explosão.gameObject, 1f);
             Destroy(gameObject);
