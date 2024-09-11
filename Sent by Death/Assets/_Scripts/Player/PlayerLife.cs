@@ -58,7 +58,7 @@ public class PlayerLife : MonoBehaviour
             health = 0;
             gameOverPanel.SetActive(true);
             die.Play();
-            Time.timeScale = 0f;
+            SetPause();
         }
     }
 

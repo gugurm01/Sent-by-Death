@@ -12,6 +12,12 @@ public class Menu : MonoBehaviour
     {
         SceneManager.LoadScene(sceneName);
     }
+
+    public void Restart()
+    {
+        Persistence.Instance.destroy = true;
+    }
+
     public void ChangeMenus(GameObject nextButton)
     {
         EventSystem.current.SetSelectedGameObject(nextButton);

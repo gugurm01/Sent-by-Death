@@ -180,7 +180,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &3007149617485976507
 RectTransform:
   m_ObjectHideFlags: 0
@@ -465,6 +465,7 @@ GameObject:
   - component: {fileID: 3007149617684466550}
   - component: {fileID: 3007149617684466441}
   - component: {fileID: 3007149617684466440}
+  - component: {fileID: 5324929774545627969}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -561,6 +562,19 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &5324929774545627969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3007149617684466443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fc216bd62a29b84fa6da33d9ff2b8d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: 
 --- !u!1 &3007149617788932635
 GameObject:
   m_ObjectHideFlags: 0
@@ -1237,9 +1251,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 5324929774545627969}
         m_TargetAssemblyTypeName: Menu, Assembly-CSharp
-        m_MethodName: PlayButton
+        m_MethodName: ReplayButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2308,7 +2322,7 @@ MonoBehaviour:
   - {x: 0.04182066, y: -0.4337572, z: 0}
   m_ShapePathHash: 1870858165
   m_Mesh: {fileID: 0}
-  m_InstanceId: 62442
+  m_InstanceId: 106950
 --- !u!114 &1241910080442888697
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2734,6 +2748,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cd0baba8524df64d86f7bdb5467da51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destroy: 0
 --- !u!1 &3007149618857935810
 GameObject:
   m_ObjectHideFlags: 0
@@ -2991,7 +3006,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 5324929774545627969}
         m_TargetAssemblyTypeName: Menu, Assembly-CSharp
         m_MethodName: QuitButton
         m_Mode: 1
@@ -4442,7 +4457,7 @@ MonoBehaviour:
   - {x: -0.054880217, y: -0.43535262, z: 0}
   m_ShapePathHash: 1572926467
   m_Mesh: {fileID: 0}
-  m_InstanceId: 63146
+  m_InstanceId: 107102
 --- !u!1 &3278992370083480428
 GameObject:
   m_ObjectHideFlags: 0
