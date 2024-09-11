@@ -5,6 +5,7 @@ using UnityEngine;
 public class Persistence : MonoBehaviour
 {
     public static Persistence Instance;
+    public bool destroy;
     void Awake()
     {
         if (Instance == null)
@@ -19,8 +20,11 @@ public class Persistence : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        if (destroy)
+        {
+            Destroy(gameObject);
+        }
     }
 }
