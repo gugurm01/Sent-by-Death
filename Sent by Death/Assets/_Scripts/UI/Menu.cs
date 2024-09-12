@@ -15,7 +15,8 @@ public class Menu : MonoBehaviour
 
     public void Restart()
     {
-        Persistence.Instance.destroy = true;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex +0);
+        Destroy(Persistence.Instance.gameObject);
     }
 
     public void ChangeMenus(GameObject nextButton)
@@ -26,6 +27,12 @@ public class Menu : MonoBehaviour
     {
         Application.Quit();
         Debug.Log("Saindo...");
+    }
+
+    public void BackToMenu()
+    {
+        Destroy(Persistence.Instance.gameObject);
+        SceneManager.LoadScene("Menu");
     }
 
     public void ReplayButton()

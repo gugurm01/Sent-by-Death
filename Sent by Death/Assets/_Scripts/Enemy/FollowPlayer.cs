@@ -20,5 +20,9 @@ public class FollowPlayer : MonoBehaviour
     {
         agent.SetDestination(PlayerMove.player.transform.position);
         animator.SetFloat("Speed", agent.speed);
+        if(agent.destination == null )
+        {
+            return;
+        }
     }
 }

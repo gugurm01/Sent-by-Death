@@ -1301,7 +1301,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5324929774545627969}
         m_TargetAssemblyTypeName: Menu, Assembly-CSharp
-        m_MethodName: ReplayButton
+        m_MethodName: Restart
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3057,7 +3057,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5324929774545627969}
         m_TargetAssemblyTypeName: Menu, Assembly-CSharp
-        m_MethodName: QuitButton
+        m_MethodName: BackToMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
