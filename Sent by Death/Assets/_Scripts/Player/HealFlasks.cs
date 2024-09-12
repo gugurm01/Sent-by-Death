@@ -60,6 +60,7 @@ public class HealFlasks : MonoBehaviour
             {
                 currentFlasks++;
                 flaskTimer = 0;
+                UpdateSlider();
             }
         }
         if (currentFlasks >= maxFlasks)

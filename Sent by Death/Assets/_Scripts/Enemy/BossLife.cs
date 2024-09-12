@@ -17,6 +17,8 @@ public class BossLife : MonoBehaviour
     public GameObject linha2;
     int metadeDaVida;
 
+    public GameObject upgradeCoinPrefab;
+
     [SerializeField] Material normal, hit;
     // Start is called before the first frame update
     void Start()
@@ -26,12 +28,6 @@ public class BossLife : MonoBehaviour
         barraDeVida.maxValue = maxVidas;
         agent = GetComponent<NavMeshAgent>();
         UpdateLifeBar();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -61,6 +57,7 @@ public class BossLife : MonoBehaviour
         StartCoroutine(FlashHit());
         if (vidas <= 0)
         {
+            Instantiate(upgradeCoinPrefab, transform.position, transform.rotation);
             source.Play();
             ParticleSystem explosão = Instantiate(this.particula, new Vector3(transform.position.x, transform.position.y, -1), Quaternion.identity);
             Destroy(explosão.gameObject, 1f);

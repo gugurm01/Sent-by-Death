@@ -27,6 +27,7 @@ public class PlayerLife : MonoBehaviour
     public Transform weapons;
 
     public UnityEvent StartWeapon;
+    public UnityEvent upgradeWeapon;
 
     public int health;
     public int maxHealth;
@@ -89,5 +90,10 @@ public class PlayerLife : MonoBehaviour
         }
         else
             Time.timeScale = 0;
+    }
+
+    public void InvokeEvent()
+    {
+        upgradeWeapon.Invoke();
     }
 }

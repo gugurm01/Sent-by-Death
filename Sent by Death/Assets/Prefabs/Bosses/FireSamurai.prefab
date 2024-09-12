@@ -580,6 +580,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 3815095098285856551}
   barraDeVida: {fileID: 3815095098283809106}
   linha2: {fileID: 3815095098774134367}
+  upgradeCoinPrefab: {fileID: 1398225334102588374, guid: 652cd5c3f00d6814e86c4755e1c24057, type: 3}
   normal: {fileID: 2100000, guid: f08c10723513bc24c801b8b8e6b24cc5, type: 2}
   hit: {fileID: 2100000, guid: 9fa50cde7e73fe749ad98aa2427972d2, type: 2}
 --- !u!114 &3815095098285307790

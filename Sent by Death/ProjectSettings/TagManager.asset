@@ -11,6 +11,9 @@ TagManager:
   - EnemyBullet
   - Sword
   - Magnetic
+  - UpgradeCoin
+  - Facas
+  - Scimitarra
   layers:
   - Default
   - TransparentFX
