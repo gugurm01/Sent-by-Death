@@ -5,6 +5,7 @@ using TMPro;
 
 public class ShootAndAim : MonoBehaviour
 {
+    public static ShootAndAim Instance;
     public Transform firePoint;
     public GameObject bulletPrefab, text;
     public int currentAmmo = -1;
@@ -14,9 +15,16 @@ public class ShootAndAim : MonoBehaviour
     [SerializeField] GameObject reloadBar;
 
     [SerializeField] float reloadTime;
-    [SerializeField] int maxAmmo;
+    public int maxAmmo;
     bool isReloading = false;
     public Animator anim;
+
+    public int dano;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     public void Start()
     {
@@ -47,11 +55,9 @@ public class ShootAndAim : MonoBehaviour
             Shoot();
             
         }
-        
-        
     }
 
-    IEnumerator Reload()
+    public IEnumerator Reload()
     {
         isReloading = true;
         ammoText.text = "Recarregando...";

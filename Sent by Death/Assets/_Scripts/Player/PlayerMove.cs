@@ -19,6 +19,8 @@ public class PlayerMove : MonoBehaviour
 
     public Transform t;
 
+    public static PlayerMove Instance;
+
     private Vector2 worldPosition;
     private Vector2 direction;
 
@@ -49,6 +51,11 @@ public class PlayerMove : MonoBehaviour
     private void OnDisable()
     {
         inputAction.Disable();
+    }
+
+    private void Awake()
+    {
+        Instance = this;
     }
 
     void Start()

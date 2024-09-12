@@ -13,6 +13,8 @@ public class bullet : MonoBehaviour
 
     public static bullet Instance;
 
+    public bool doubleDamage;
+
     private void Awake()
     {
         Instance = this;
@@ -36,5 +38,15 @@ public class bullet : MonoBehaviour
             Destroy(explosão.gameObject, 1f);
             Destroy(this.gameObject);
         }
+    }
+
+    private void FixedUpdate()
+    {
+        if(doubleDamage)
+        {
+            dano *= 2;
+        }
+
+        print(dano);
     }
 }
