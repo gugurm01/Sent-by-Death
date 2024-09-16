@@ -15,7 +15,7 @@ public class Menu : MonoBehaviour
 
     public void Restart()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex +0);
+        SceneManager.LoadScene("Tutorial");
         Destroy(Persistence.Instance.gameObject);
     }
 
