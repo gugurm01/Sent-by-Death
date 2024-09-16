@@ -34,5 +34,12 @@ public class EnemyBullet : MonoBehaviour
             Destroy(explosão.gameObject, 1f);
             Destroy(this.gameObject);
         }
+
+        if (collision.CompareTag("Sword"))
+        {
+            ParticleSystem explosão = Instantiate(this.particula, new Vector3(transform.position.x, transform.position.y, -1), Quaternion.identity);
+            Destroy(explosão.gameObject, 1f);
+            Destroy(this.gameObject);
+        }
     }
 }

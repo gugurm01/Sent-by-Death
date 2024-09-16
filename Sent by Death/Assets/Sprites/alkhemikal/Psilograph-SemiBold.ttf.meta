@@ -1,0 +1,25 @@
+fileFormatVersion: 2
+guid: c7ff29dac7c0cc64abbe3b6dcfb991ea
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Psilograph
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: b5dae15753d442c4abe858b94b471dff, type: 3}
+  - {fileID: 12800000, guid: a698af2b934fc7e4da2bc5a63d894022, type: 3}
+  - {fileID: 12800000, guid: b3762555a5c29d94dae932e7a182a9f4, type: 3}
+  - {fileID: 12800000, guid: 453342d3c0be92044a05fbce882ca2d7, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
