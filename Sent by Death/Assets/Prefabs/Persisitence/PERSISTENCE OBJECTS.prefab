@@ -459,6 +459,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 32792068222006335}
+  choice1: {fileID: 4042481159263164765}
 --- !u!114 &6577161970090437509
 MonoBehaviour:
   m_ObjectHideFlags: 0

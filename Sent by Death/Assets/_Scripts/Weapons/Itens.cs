@@ -2,17 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using Unity.VisualScripting;
+using UnityEngine.EventSystems;
 
 public class Itens : MonoBehaviour
 {
     public static Itens Instance;
     public TextMeshProUGUI text;
+    public GameObject choice1;
 
     void Start()
     {
         GameObject facas = GameObject.FindGameObjectWithTag("Facas");
         GameObject sword = GameObject.FindGameObjectWithTag("Scimitarra");
+
+        EventSystem.current.SetSelectedGameObject(choice1);
 
         if (facas == null && sword != null)
         {

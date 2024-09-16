@@ -14,25 +14,7 @@ public class NextLevel : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            //interactionText.SetActive(true);
-            inReach = true;
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
-            //interactionText.SetActive(false);
-            inReach = false;
-        }
-    }
-
-    private void Update()
-    {
-        if(inReach && Input.GetKeyDown(KeyCode.E))
-        {
-            if(nextScene == "Menu")
+            if (nextScene == "Menu")
             {
                 Persistence.Instance.destroy = true;
                 SceneManager.LoadScene(nextScene);
