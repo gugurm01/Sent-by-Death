@@ -61,4 +61,11 @@ public class Itens : MonoBehaviour
             ShootAndAim.Instance.maxAmmo += damageIncrease;
         }
     }
+
+    public void IncreaseCuras(int increase)
+    {
+        HealFlasks.instance.maxFlasks += increase;
+        HealFlasks.instance.currentFlasks = HealFlasks.instance.maxFlasks;
+        HealFlasks.instance.UpdateSlider();
+    }
 }

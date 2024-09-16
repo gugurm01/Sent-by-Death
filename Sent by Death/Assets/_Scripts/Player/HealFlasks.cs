@@ -70,7 +70,7 @@ public class HealFlasks : MonoBehaviour
         }
     }
 
-    void UpdateSlider()
+    public void UpdateSlider()
     {
         flaskCount.text = currentFlasks.ToString();
 
