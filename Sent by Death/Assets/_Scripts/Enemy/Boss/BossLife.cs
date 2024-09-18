@@ -18,6 +18,7 @@ public class BossLife : MonoBehaviour
     int metadeDaVida;
 
     public float maxSpeed;
+    public bool isInvencible;
 
     public GameObject upgradeCoinPrefab;
 
@@ -49,6 +50,10 @@ public class BossLife : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        if (isInvencible)
+        {
+            return;
+        }
         source.Play();
         vidas -= damage;
         if(vidas <= metadeDaVida)
