@@ -17,6 +17,8 @@ public class BossLife : MonoBehaviour
     public GameObject linha2;
     int metadeDaVida;
 
+    public float maxSpeed;
+
     public GameObject upgradeCoinPrefab;
 
     [SerializeField] Material normal, hit;
@@ -70,7 +72,7 @@ public class BossLife : MonoBehaviour
         agent.speed = 0;
         spriteRenderer.material = hit;
         yield return new WaitForSecondsRealtime(0.2f);
-        agent.speed = 2;
+        agent.speed = maxSpeed;
         spriteRenderer.material = normal;
     }
 
