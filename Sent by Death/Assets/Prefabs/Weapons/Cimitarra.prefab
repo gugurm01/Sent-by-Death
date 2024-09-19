@@ -161,7 +161,7 @@ GameObject:
   - component: {fileID: 654126529338695298}
   - component: {fileID: 654126529338695325}
   m_Layer: 0
-  m_Name: Scimitarra
+  m_Name: Cimitarra
   m_TagString: Scimitarra
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -469,10 +469,6 @@ PrefabInstance:
     - target: {fileID: 4666556594979616741, guid: d9a74ce0a1add884fb316bea5299a987, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4666556595384148992, guid: d9a74ce0a1add884fb316bea5299a987, type: 3}
-      propertyPath: m_text
-      value: Scimitarra
       objectReference: {fileID: 0}
     - target: {fileID: 4666556595384148993, guid: d9a74ce0a1add884fb316bea5299a987, type: 3}
       propertyPath: m_SizeDelta.y

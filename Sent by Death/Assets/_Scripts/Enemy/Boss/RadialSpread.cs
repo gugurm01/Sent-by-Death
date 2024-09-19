@@ -20,8 +20,10 @@ public class RadialSpread : MonoBehaviour
         startPoint = point.position;
     }
 
-    public void SpawnProjectiles(int numberOfProjectiles)
+    public void SpawnProjectiles(int min)
     {
+        int max = 60;
+        int numberOfProjectiles = Random.Range(min, max);
         CameraShaker.Instance.ShakeOnce(2f, 2f, 0.2f, 0.2f);
         for (int i = 0; i < numberOfProjectiles; i++)
         {
