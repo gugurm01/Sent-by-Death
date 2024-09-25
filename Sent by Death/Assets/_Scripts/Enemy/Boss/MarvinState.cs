@@ -10,6 +10,8 @@ public class MarvinState : MonoBehaviour
         Repouso
     }
 
+    [SerializeField] AudioSource source;
+
     public State currentState;
 
     public float tempoEmRepouso = 3f;
@@ -42,6 +44,8 @@ public class MarvinState : MonoBehaviour
                 boxCollider.enabled = true;
                 stateTimer -= Time.deltaTime;
 
+                source.Play();
+
                 if (stateTimer <= 0)
                 {
                     currentState = State.Atacando;
@@ -63,5 +67,10 @@ public class MarvinState : MonoBehaviour
                 }
                 break;
         }
+    }
+
+    public void PlaySound(AudioClip clip)
+    {
+        source.Play();
     }
 }

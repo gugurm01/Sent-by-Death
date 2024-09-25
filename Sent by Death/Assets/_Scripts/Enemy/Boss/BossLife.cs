@@ -21,6 +21,7 @@ public class BossLife : MonoBehaviour
     public bool isInvencible;
 
     public GameObject upgradeCoinPrefab;
+    public GameObject coinPrefab;
 
     [SerializeField] Material normal, hit;
     // Start is called before the first frame update
@@ -64,6 +65,11 @@ public class BossLife : MonoBehaviour
         StartCoroutine(FlashHit());
         if (vidas <= 0)
         {
+            int randomCoins = Random.Range(5, 10);
+            for(int i = 0; i < randomCoins; i++)
+            {
+                Instantiate(coinPrefab, transform.position, transform.rotation);
+            }
             Instantiate(upgradeCoinPrefab, transform.position, transform.rotation);
             source.Play();
             ParticleSystem explosão = Instantiate(this.particula, new Vector3(transform.position.x, transform.position.y, -1), Quaternion.identity);

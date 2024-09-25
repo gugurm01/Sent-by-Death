@@ -14,6 +14,7 @@ public class RadialSpread : MonoBehaviour
     public const float radius = 1f;
     public Transform point;
     public int safado;
+    public AudioSource source;
 
     private void Start()
     {
@@ -22,6 +23,7 @@ public class RadialSpread : MonoBehaviour
 
     public void SpawnProjectiles(int min)
     {
+        source.Play();
         int max = 60;
         int numberOfProjectiles = Random.Range(min, max);
         CameraShaker.Instance.ShakeOnce(2f, 2f, 0.2f, 0.2f);
