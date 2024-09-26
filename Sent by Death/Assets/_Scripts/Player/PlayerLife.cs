@@ -10,7 +10,7 @@ public class PlayerLife : MonoBehaviour
 {
     public static PlayerLife Instance;
 
-    public AudioSource damage, heal, die;
+    public AudioSource damage, heal, die, coin;
 
     public ParticleSystem healParticle;
 
@@ -103,5 +103,6 @@ public class PlayerLife : MonoBehaviour
     public void InvokeEvent()
     {
         upgradeWeapon.Invoke();
+        coin.Play();
     }
 }

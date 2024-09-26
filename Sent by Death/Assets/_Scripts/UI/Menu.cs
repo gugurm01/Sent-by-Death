@@ -7,6 +7,7 @@ using UnityEngine.EventSystems;
 public class Menu : MonoBehaviour
 {
     public string sceneName;
+    public AudioSource source;
 
     public void PlayButton()
     {
@@ -38,5 +39,10 @@ public class Menu : MonoBehaviour
     public void ReplayButton()
     {
         Time.timeScale = 1;
+    }
+
+    public void PlaySound(AudioClip clip)
+    {
+        source.PlayOneShot(clip);
     }
 }
