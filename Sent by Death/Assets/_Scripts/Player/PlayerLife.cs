@@ -46,20 +46,21 @@ public class PlayerLife : MonoBehaviour
 
     public void TakeDamage(int dano)
     {
-        if (invunerable)
-            return;
-
-        CameraShaker.Instance.ShakeOnce(10f, 10f, .3f, .3f);
-        health -= dano;
-        damage.Play();
-        StartCoroutine(Flash());
-        OnPlayerDamaged?.Invoke();
-        if (health <= 0)
+        if(!invunerable)
         {
-            health = 0;
-            gameOverPanel.SetActive(true);
-            die.Play();
-            SetPause();
+            CameraShaker.Instance.ShakeOnce(10f, 10f, .3f, .3f);
+            health -= dano;
+            damage.Play();
+            StartCoroutine(Flash());
+            StartCoroutine(SetInvunerable());
+            OnPlayerDamaged?.Invoke();
+            if (health <= 0)
+            {
+                health = 0;
+                gameOverPanel.SetActive(true);
+                die.Play();
+                SetPause();
+            }
         }
     }
 
@@ -79,6 +80,13 @@ public class PlayerLife : MonoBehaviour
         spriteRenderer.material = hit;
         yield return new WaitForSecondsRealtime(0.2f);
         spriteRenderer.material = normal;
+        invunerable = false;
+    }
+
+    IEnumerator SetInvunerable()
+    {
+        invunerable = true;
+        yield return new WaitForSecondsRealtime(0.5f);
         invunerable = false;
     }
 

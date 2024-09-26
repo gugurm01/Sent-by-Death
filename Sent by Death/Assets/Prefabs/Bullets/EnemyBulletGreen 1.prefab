@@ -211,7 +211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c11e98e14bdb6b743aabab3735fb04fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dano: 2
+  dano: 1
   particula: {fileID: 8546278494577566325, guid: df2f1f8aa0360eb49b06f8d3b59af377, type: 3}
 --- !u!58 &1203260648220068274
 CircleCollider2D:

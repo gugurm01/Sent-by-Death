@@ -803,7 +803,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -1079,6 +1079,7 @@ MonoBehaviour:
   tempoDeAtaque: 5.7
   animator: {fileID: 8002010972141044603}
   boxCollider: {fileID: 8002010973061994945}
+  maxSpeed: 0
 --- !u!195 &8002010973061994947
 NavMeshAgent:
   m_ObjectHideFlags: 0

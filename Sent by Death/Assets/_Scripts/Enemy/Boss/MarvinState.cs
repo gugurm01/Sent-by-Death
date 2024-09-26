@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class MarvinState : MonoBehaviour
 {
@@ -21,6 +22,8 @@ public class MarvinState : MonoBehaviour
     public Animator animator;
     BossLife life;
     public BoxCollider2D boxCollider;
+    NavMeshAgent agent;
+    public float maxSpeed;
 
     void Start()
     {
@@ -29,15 +32,17 @@ public class MarvinState : MonoBehaviour
         stateTimer = tempoDeAtaque;
 
         life = GetComponent<BossLife>();
+
+        agent = GetComponent<NavMeshAgent>();
     }
 
     // Update is called once per frame
     void Update()
     {
-
         switch (currentState)
         {
             case State.Repouso:
+                agent.speed = maxSpeed;
                 animator.SetBool("isAttacking", true);
                 life.isInvencible = false;
 
@@ -54,6 +59,7 @@ public class MarvinState : MonoBehaviour
                 break;
 
             case State.Atacando:
+                agent.speed = 0;
                 animator.SetBool("isAttacking", false);
                 life.isInvencible = false;
 
