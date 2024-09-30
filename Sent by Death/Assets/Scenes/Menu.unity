@@ -3675,7 +3675,7 @@ MonoBehaviour:
   mainCam: {fileID: 1872803419}
   player: {fileID: 0}
   animator: {fileID: 1812158945}
-  NextScene: Tutorial
+  NextScene: CutsceneMenu
 --- !u!114 &1732938966
 MonoBehaviour:
   m_ObjectHideFlags: 0
