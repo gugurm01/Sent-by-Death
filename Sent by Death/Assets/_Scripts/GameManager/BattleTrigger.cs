@@ -2,21 +2,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+[System.Serializable]
+public class Wave
+{
+    public List<GameObject> enemies; // Lista de inimigos para essa onda
+}
 
 public class BattleTrigger : MonoBehaviour
 {
-    public bool isTrigged;
-    [SerializeField]
-    GameObject[] enemiesToSpawnIn;
-    [SerializeField]
-    Collider2D currentRoomSpawnableArea;
+    public bool isTriggered;
 
-    GameObject[] enemiesInScene;
+    [Header("Wave Settings")]
+    public List<Wave> waves; // Lista de ondas
 
-    [SerializeField] GameObject walls;
+    [SerializeField] private Collider2D currentRoomSpawnableArea;
+    [SerializeField] private GameObject walls;
+    [SerializeField] private BoxCollider2D col;
 
-    GameObject player;
-    [SerializeField] BoxCollider2D col;
+    private int currentWave = 0; // Onda atual
+    private GameObject player;
+    private GameObject[] enemiesInScene;
 
     private void Start()
     {
@@ -25,25 +30,14 @@ public class BattleTrigger : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if(collision.CompareTag("Player"))
+        if (collision.CompareTag("Player") && !isTriggered)
         {
-            //Vector2 exitDir = (collision.transform.position - col.bounds.center).normalized;
-
-            //if (exitDir.x > 0)
-            //{
-                BattleManager.instance.SpawnEnemies(currentRoomSpawnableArea, enemiesToSpawnIn);
-                isTrigged = true;
-            //}
-            //else if (exitDir.y > 0)
-            //{
-                //BattleManager.instance.SpawnEnemies(currentRoomSpawnableArea, enemiesToSpawnIn);
-                //isTrigged = true;
-            //}
+            isTriggered = true;
+            StartCoroutine(SpawnWave());
         }
-
     }
 
-    public void FixedUpdate()
+    private void FixedUpdate()
     {
         enemiesInScene = GameObject.FindGameObjectsWithTag("Enemy");
         Battle();
@@ -51,19 +45,36 @@ public class BattleTrigger : MonoBehaviour
 
     public void Battle()
     {
-        if (isTrigged)
+        if (isTriggered && enemiesInScene.Length == 0 && currentWave < waves.Count)
         {
-            if (enemiesInScene.Length > 0)
-            {
-                walls.SetActive(true);
-                Destroy(col);
-            }
-            else if (enemiesInScene.Length <= 0)
-            {
-                walls.SetActive(false);
-                Destroy(gameObject);
-            }
+            // Iniciar próxima onda
+            StartCoroutine(SpawnWave());
+        }
+        else if (isTriggered && enemiesInScene.Length == 0 && currentWave >= waves.Count)
+        {
+            // Acabou todas as ondas
+            EndBattle();
         }
     }
 
+    private IEnumerator SpawnWave()
+    {
+        if (currentWave < waves.Count)
+        {
+            // Pegando a lista de inimigos da onda atual
+            walls.SetActive(true);
+            List<GameObject> enemiesToSpawn = waves[currentWave].enemies;
+            BattleManager.instance.SpawnEnemies(currentRoomSpawnableArea, enemiesToSpawn.ToArray()); // Convertendo para array
+
+            currentWave++;
+            yield return null;
+        }
+    }
+
+    private void EndBattle()
+    {
+        walls.SetActive(false);
+        Destroy(col);
+        Destroy(gameObject);
+    }
 }
