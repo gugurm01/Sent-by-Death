@@ -26,7 +26,7 @@ public class RadialSpread : MonoBehaviour
         source.Play();
         int max = 60;
         int numberOfProjectiles = Random.Range(min, max);
-        CameraShaker.Instance.ShakeOnce(2f, 2f, 0.2f, 0.2f);
+        CameraShaker.Instance.ShakeOnce(1f, 1f, 0.2f, 0.2f);
         for (int i = 0; i < numberOfProjectiles; i++)
         {
             // Calcula o ângulo para cada bala
