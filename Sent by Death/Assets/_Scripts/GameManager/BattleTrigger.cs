@@ -22,7 +22,6 @@ public class BattleTrigger : MonoBehaviour
     private int currentWave = 0; // Onda atual
     private GameObject player;
     private GameObject[] enemiesInScene;
-
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -47,12 +46,10 @@ public class BattleTrigger : MonoBehaviour
     {
         if (isTriggered && enemiesInScene.Length == 0 && currentWave < waves.Count)
         {
-            // Iniciar próxima onda
             StartCoroutine(SpawnWave());
         }
         else if (isTriggered && enemiesInScene.Length == 0 && currentWave >= waves.Count)
         {
-            // Acabou todas as ondas
             EndBattle();
         }
     }
@@ -61,7 +58,7 @@ public class BattleTrigger : MonoBehaviour
     {
         if (currentWave < waves.Count)
         {
-            // Pegando a lista de inimigos da onda atual
+            // pega a lista de inimigos pra spawnar
             walls.SetActive(true);
             List<GameObject> enemiesToSpawn = waves[currentWave].enemies;
             BattleManager.instance.SpawnEnemies(currentRoomSpawnableArea, enemiesToSpawn.ToArray()); // Convertendo para array
