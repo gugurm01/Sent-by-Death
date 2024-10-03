@@ -774,25 +774,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1732938966}
-        m_TargetAssemblyTypeName: DialogueTrigger, Assembly-CSharp
-        m_MethodName: TriggerDialogue
+      - m_Target: {fileID: 1732938960}
+        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
+        m_MethodName: PlayButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1732938960}
-        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
-        m_MethodName: ChangeMenus
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1384430734}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -3572,7 +3560,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fc216bd62a29b84fa6da33d9ff2b8d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: 
+  sceneName: CutsceneMenu
   source: {fileID: 1261274297}
 --- !u!114 &1732938961
 MonoBehaviour:
