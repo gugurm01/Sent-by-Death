@@ -367,7 +367,22 @@ MonoBehaviour:
     Assets:
 
 
-    Ninja Adventure - Itch.io'
+    Ninja Adventure - Itch.io
+
+
+
+    Sounds:
+
+
+    bertz
+    - FreeSound
+
+    matrixx - FreeSound
+
+    nxrt - FreeSound
+
+    the sacha rush
+    - FreeSound'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 91dcda9c77fb8e54b963b8faec38ea7b, type: 2}
   m_sharedMaterial: {fileID: 4662239516987149309, guid: 91dcda9c77fb8e54b963b8faec38ea7b, type: 2}
