@@ -9,11 +9,6 @@ public class AimPlayer : MonoBehaviour
     Vector2 playerVector;
     Transform dir;
     public GameObject gun;
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
