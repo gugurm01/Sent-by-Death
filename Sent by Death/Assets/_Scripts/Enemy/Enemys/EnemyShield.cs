@@ -41,7 +41,15 @@ public class EnemyShield : MonoBehaviour
         if (collision.CompareTag("Bullet"))
         {
             CameraShaker.Instance.ShakeOnce(2f, 2f, 0.2f, 0.2f);
-            TakeDamage(bullet.Instance.dano);
+            bullet bulLet = collision.gameObject.GetComponent<bullet>();
+            if (bulLet != null)
+            {
+                TakeDamage(bullet.Instance.dano);
+            }
+            else
+            {
+                TakeDamage(2);
+            }
         }
 
         if (collision.CompareTag("Sword"))

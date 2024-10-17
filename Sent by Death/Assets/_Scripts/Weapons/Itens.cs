@@ -25,6 +25,10 @@ public class Itens : MonoBehaviour
         {
             text.text = "Aumentar numero de balas";
         }
+        else
+        {
+            text.text = "??";
+        }
     }
 
     // Update is called once per frame
@@ -62,6 +66,10 @@ public class Itens : MonoBehaviour
         else if(sword == null && facas != null)
         {
             ShootAndAim.Instance.maxAmmo += damageIncrease;
+        }
+        else
+        {
+            return;
         }
     }
 

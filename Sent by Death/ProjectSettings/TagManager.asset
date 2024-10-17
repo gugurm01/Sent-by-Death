@@ -15,6 +15,7 @@ TagManager:
   - Facas
   - Scimitarra
   - EndLevel
+  - Explosion
   layers:
   - Default
   - TransparentFX
