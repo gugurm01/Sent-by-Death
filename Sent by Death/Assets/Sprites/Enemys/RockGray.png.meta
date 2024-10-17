@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 79bb9366212c45748be66f5eef9bd3ba
+guid: 3b17764933fa88a429c7c3b3ff13c866
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -106,7 +106,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -118,7 +118,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -129,32 +129,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Fireball_0
+      name: RockGray_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 0
-        width: 13
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d24b5bcea1e7d984cb96213cc8f1b7f0
-      internalID: 1431775491
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Fireball_1
-      rect:
-        serializedVersion: 2
-        x: 17
-        y: 0
+        x: 2
+        y: 1
         width: 12
         height: 14
       alignment: 0
@@ -164,20 +143,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 161091106d677e849a5e80f36f10b2e2
-      internalID: 340472232
+      spriteID: c7abccabd256f2542bda0d61331319fa
+      internalID: -1910266656
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Fireball_2
+      name: RockGray_1
       rect:
         serializedVersion: 2
-        x: 34
-        y: 0
-        width: 13
-        height: 14
+        x: 22
+        y: 6
+        width: 8
+        height: 7
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -185,20 +164,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ce85d184abd4e04469d32657b372a79f
-      internalID: -1192493821
+      spriteID: a44f3d0e47dc7fe4fa6412e0d5650dbf
+      internalID: 163464576
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Fireball_3
+      name: RockGray_2
       rect:
         serializedVersion: 2
-        x: 51
-        y: 0
+        x: 35
+        y: 5
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4d496337cb05c34fb5a2d6d57f45ab6
+      internalID: -328963936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RockGray_3
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 3
         width: 12
-        height: 14
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -206,8 +206,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dd4ca933559713c408ebf7ea1c68029e
-      internalID: 1662727309
+      spriteID: c5934a0f7f7efe1418ca0c7a920ae7ae
+      internalID: -2062340561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RockGray_4
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 3
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b6142466eccad647af28699eef7981c
+      internalID: 1238562915
       vertices: []
       indices: 
       edges: []
@@ -223,10 +244,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Fireball_3: 1662727309
-      Fireball_2: -1192493821
-      Fireball_0: 1431775491
-      Fireball_1: 340472232
+      RockGray_1: 163464576
+      RockGray_2: -328963936
+      RockGray_4: 1238562915
+      RockGray_3: -2062340561
+      RockGray_0: -1910266656
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
