@@ -25,6 +25,9 @@ public class BreakableStone : MonoBehaviour
         if (collision.CompareTag("Bullet"))
         {
             TakeDamage();
+        }if (collision.CompareTag("Sword"))
+        {
+            TakeDamage();
         }
     }
 
