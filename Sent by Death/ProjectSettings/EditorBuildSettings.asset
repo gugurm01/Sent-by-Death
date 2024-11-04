@@ -6,9 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Edgar/Examples/Grid2D/Gungeon/Gungeon.unity
-    guid: 1b515d7be25d4bd48b7d60d8f2c3bc4a
-  - enabled: 1
     path: Assets/Scenes/Menu.unity
     guid: 5f5fe63c2fff8eb498a586ffb2905bc7
   - enabled: 1
@@ -23,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Secret Level.unity
     guid: d2553cc92d881ee4fbef244f72d52724
+  - enabled: 1
+    path: Assets/Scenes/Level2.unity
+    guid: 21dd659306ceec74d98adc59ff1f0cbd
   m_configObjects: {}
