@@ -18,8 +18,6 @@ public class BossFire : MonoBehaviour
     {
         
     }
-
-    // Update is called once per frame
     void FixedUpdate()
     {
         timer += Time.deltaTime;
