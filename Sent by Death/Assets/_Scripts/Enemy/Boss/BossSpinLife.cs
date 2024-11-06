@@ -16,6 +16,7 @@ public class BossSpinLife : MonoBehaviour
     public GameObject coinPrefab;
 
     [SerializeField] Material normal, hit;
+    [SerializeField] Animator animator;
 
     private void Start()
     {
@@ -50,6 +51,8 @@ public class BossSpinLife : MonoBehaviour
         spriteRenderer.material = hit;
         yield return new WaitForSecondsRealtime(0.2f);
         spriteRenderer.material = normal;
+        animator.SetTrigger("Dano");
+        
     }
     void UpdateLifeBar()
     {

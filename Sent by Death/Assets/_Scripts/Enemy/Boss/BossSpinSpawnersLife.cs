@@ -12,11 +12,15 @@ public class BossSpinSpawnersLife : MonoBehaviour
     [SerializeField] Material normal, hit;
     public AudioSource source;
     BossSpinState state;
+    BossSpinLife bossLife;
     public bool rotateAfterDie;
+    [SerializeField] int damageAfterDie;
+    [SerializeField] Animator animator;
 
     private void Start()
     {
         state = gameObject.GetComponentInParent<BossSpinState>();
+        bossLife = gameObject.GetComponentInParent<BossSpinLife>();
         vidas = maxVidas;
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
@@ -52,7 +56,7 @@ public class BossSpinSpawnersLife : MonoBehaviour
             {
                 state.SwitchDirection();
             }
-            
+            bossLife.TakeDamage(damageAfterDie);
             ParticleSystem explosão = Instantiate(this.particula, new Vector3(transform.position.x, transform.position.y, -1), Quaternion.identity);
             Destroy(explosão.gameObject, 1f);
             Destroy(gameObject);
