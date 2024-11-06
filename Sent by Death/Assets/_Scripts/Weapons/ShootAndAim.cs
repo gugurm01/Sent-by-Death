@@ -62,7 +62,6 @@ public class ShootAndAim : MonoBehaviour
         isReloading = true;
         ammoText.text = "Recarregando...";
         reloadBar.SetActive(true);
-        print("reload");
         yield return new WaitForSeconds(reloadTime);
         currentAmmo = maxAmmo;
         isReloading = false;
