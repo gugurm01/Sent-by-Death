@@ -3077,7 +3077,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSR: {fileID: 3007149619590622373}
-  gunSR: {fileID: 0}
   t: {fileID: 3007149618531734227}
   inputAction:
     m_Name: Input
@@ -3211,6 +3210,8 @@ MonoBehaviour:
   canDash: 1
   isDashing: 0
   anim: {fileID: 3007149619590622370}
+  playerLayer: 7
+  bulletLayer: 9
 --- !u!114 &3007149618531734239
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3253,6 +3254,7 @@ MonoBehaviour:
   damage: {fileID: 6833022040287361606}
   heal: {fileID: 383410574961506841}
   die: {fileID: 5784605662891169687}
+  coin: {fileID: 0}
   healParticle: {fileID: 69951003861507708, guid: 8c556959c95d4614c92c893146a87c4f, type: 3}
   invunerable: 0
   gameOverPanel: {fileID: 3007149617485976506}

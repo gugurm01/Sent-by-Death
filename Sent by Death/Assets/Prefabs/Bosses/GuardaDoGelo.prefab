@@ -1060,7 +1060,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 160c17dbe6671fa40bb8d85d6810e4cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 7693502892733224016, guid: d27d549d7e2679748b7b44b38e52576d, type: 3}
+  bulletPrefab: {fileID: 7693502892733224016, guid: 22a9384e367e2ec4db9afd222b014596, type: 3}
   type: 0
   spin: 180
   fireRate: 0.1
@@ -1287,9 +1287,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 160c17dbe6671fa40bb8d85d6810e4cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 7693502892733224016, guid: d27d549d7e2679748b7b44b38e52576d, type: 3}
+  bulletPrefab: {fileID: 7693502892733224016, guid: 22a9384e367e2ec4db9afd222b014596, type: 3}
   type: 1
-  spin: 1
+  spin: 2
   fireRate: 0.1
 --- !u!114 &5943175341989345318
 MonoBehaviour:
@@ -1568,9 +1568,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 160c17dbe6671fa40bb8d85d6810e4cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 7693502892733224016, guid: d27d549d7e2679748b7b44b38e52576d, type: 3}
+  bulletPrefab: {fileID: 7693502892733224016, guid: 22a9384e367e2ec4db9afd222b014596, type: 3}
   type: 1
-  spin: 1
+  spin: 2
   fireRate: 0.1
 --- !u!114 &5943175342148938942
 MonoBehaviour:
@@ -1718,7 +1718,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 160c17dbe6671fa40bb8d85d6810e4cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 7693502892733224016, guid: d27d549d7e2679748b7b44b38e52576d, type: 3}
+  bulletPrefab: {fileID: 7693502892733224016, guid: 22a9384e367e2ec4db9afd222b014596, type: 3}
   type: 0
   spin: 180
   fireRate: 0.1
@@ -2204,7 +2204,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 160c17dbe6671fa40bb8d85d6810e4cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 7693502892733224016, guid: d27d549d7e2679748b7b44b38e52576d, type: 3}
+  bulletPrefab: {fileID: 7693502892733224016, guid: 22a9384e367e2ec4db9afd222b014596, type: 3}
   type: 0
   spin: 180
   fireRate: 0.1
@@ -2354,7 +2354,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 160c17dbe6671fa40bb8d85d6810e4cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 7693502892733224016, guid: d27d549d7e2679748b7b44b38e52576d, type: 3}
+  bulletPrefab: {fileID: 7693502892733224016, guid: 22a9384e367e2ec4db9afd222b014596, type: 3}
   type: 0
   spin: 180
   fireRate: 0.1

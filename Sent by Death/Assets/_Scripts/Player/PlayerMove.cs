@@ -15,7 +15,7 @@ public enum State
 
 public class PlayerMove : MonoBehaviour
 {
-    public SpriteRenderer playerSR, gunSR;
+    public SpriteRenderer playerSR;
 
     public Transform t;
 
@@ -42,6 +42,9 @@ public class PlayerMove : MonoBehaviour
     public Animator anim;
 
     public static State state;
+
+    public int playerLayer;
+    public int bulletLayer;
 
     private void OnEnable()
     {
@@ -84,11 +87,13 @@ public class PlayerMove : MonoBehaviour
     IEnumerator Roll()
     {
         canDash = false;
+        Physics2D.IgnoreLayerCollision(playerLayer, bulletLayer, true);
         moveDir = inputAction.ReadValue<Vector2>();
         rb.velocity = moveDir * rollSpeed;
         yield return new WaitForSeconds(rollDuration);
         state = State.Normal;
 
+        Physics2D.IgnoreLayerCollision(playerLayer, bulletLayer, false);
         yield return new WaitForSeconds(rollCooldown);
         canDash = true;
         rollCooldown = maxCooldown;
@@ -96,9 +101,6 @@ public class PlayerMove : MonoBehaviour
 
     void Movement()
     {
-        //horizontal = Input.GetAxisRaw("Horizontal");
-        //vertical = Input.GetAxisRaw("Vertical");
-
         anim.SetFloat("Speed", Mathf.Abs(moveDir.x != 0 ? moveDir.x : moveDir.y));
 
         moveDir = inputAction.ReadValue<Vector2>();

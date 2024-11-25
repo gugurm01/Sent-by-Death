@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2764736333864895379}
   - component: {fileID: 1240291379614379919}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 8654912556202678974}
   - component: {fileID: 1203260648220068274}
   - component: {fileID: 6170985290266926435}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: EnemyBulletGreen 1
   m_TagString: EnemyBullet
   m_Icon: {fileID: 0}
