@@ -10,13 +10,34 @@ public class BossSpinState : MonoBehaviour
     public GameObject straightSpawnersParent;
     public GameObject rotateSpawnersParent;
 
+    public bool isSweeping = false;
+    public float sweepSpeed = 500f;
+    public float returnSpeed = 100f;
+    public float maxAngle = 45f;
+
+    private bool sweepingOut = true;
+    private float currentAngle = 0f;
+    private Quaternion initialRotation;
+
+    void Start()
+    {
+        initialRotation = transform.rotation;
+    }
+
     void FixedUpdate()
     {
         straightSpawners = GameObject.FindGameObjectsWithTag("NPC");
 
-        transform.Rotate(0, 0, direction * rotationSpeed * Time.deltaTime);
+        if (isSweeping)
+        {
+            ContinuousSweep();
+        }
+        else
+        {
+            transform.Rotate(0, 0, direction * rotationSpeed * Time.deltaTime);
+        }
 
-        if(straightSpawners.Length == 0)
+        if (straightSpawners.Length == 0)
         {
             straightSpawnersParent.SetActive(false);
             rotateSpawnersParent.SetActive(true);
@@ -26,5 +47,24 @@ public class BossSpinState : MonoBehaviour
     public void SwitchDirection()
     {
         direction *= -1;
+    }
+
+    private void ContinuousSweep()
+    {
+        float speed = sweepingOut ? sweepSpeed : returnSpeed;
+        float step = speed * Time.deltaTime;
+
+        currentAngle += sweepingOut ? step : -step;
+
+        if (sweepingOut && currentAngle >= maxAngle)
+        {
+            sweepingOut = false;
+        }
+        else if (!sweepingOut && currentAngle <= 0f)
+        {
+            sweepingOut = true;
+        }
+
+        transform.rotation = initialRotation * Quaternion.Euler(0, 0, currentAngle);
     }
 }

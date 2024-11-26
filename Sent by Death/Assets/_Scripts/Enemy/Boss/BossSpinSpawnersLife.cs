@@ -55,6 +55,7 @@ public class BossSpinSpawnersLife : MonoBehaviour
             if (rotateAfterDie)
             {
                 state.SwitchDirection();
+                state.isSweeping = false;
             }
             bossLife.TakeDamage(damageAfterDie);
             ParticleSystem explosão = Instantiate(this.particula, new Vector3(transform.position.x, transform.position.y, -1), Quaternion.identity);
