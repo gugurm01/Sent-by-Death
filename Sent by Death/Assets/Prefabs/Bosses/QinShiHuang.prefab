@@ -1244,7 +1244,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 7693502892733224016, guid: 22a9384e367e2ec4db9afd222b014596, type: 3}
   type: 1
   spin: 45
-  fireRate: 0.1
+  fireRate: 0.2
   canSpawn: 1
 --- !u!114 &1638416465520730898
 MonoBehaviour:
@@ -1603,7 +1603,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 7693502892733224016, guid: 22a9384e367e2ec4db9afd222b014596, type: 3}
   type: 1
   spin: 45
-  fireRate: 0.1
+  fireRate: 0.2
   canSpawn: 1
 --- !u!114 &1638416465922504108
 MonoBehaviour:
