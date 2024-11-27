@@ -1610,8 +1610,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textDisplay: {fileID: 357683807}
-  fullText: Lhe darei armas e habilidades para voce se tornar o meu receptaculo e
-    acabar com o que Qin esta fazendo...
+  fullText: SENT BY DEATH
   typingSpeed: 0.05
 --- !u!114 &357683807
 MonoBehaviour:
