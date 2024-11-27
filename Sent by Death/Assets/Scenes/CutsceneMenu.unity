@@ -3635,11 +3635,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: dfd529347c2a9c241951b95b7e6d179c, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 925d95faf74945244835791758432e42, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -9686,8 +9686,6 @@ PlayableDirector:
     value: {fileID: 1812158941}
   - key: {fileID: -6622366891593926605, guid: b963e2fa32f64f94faabf5898f05684c, type: 2}
     value: {fileID: 1261274295}
-  - key: {fileID: -2490313457569622683, guid: b963e2fa32f64f94faabf5898f05684c, type: 2}
-    value: {fileID: 669313449}
   - key: {fileID: 7524957060714206554, guid: b963e2fa32f64f94faabf5898f05684c, type: 2}
     value: {fileID: 824103625}
   - key: {fileID: -884552335940021617, guid: b963e2fa32f64f94faabf5898f05684c, type: 2}
@@ -9721,6 +9719,10 @@ PlayableDirector:
   - key: {fileID: 1510476948569697234, guid: b963e2fa32f64f94faabf5898f05684c, type: 2}
     value: {fileID: 46575610}
   - key: {fileID: 5769958041442380066, guid: b963e2fa32f64f94faabf5898f05684c, type: 2}
+    value: {fileID: 311317388}
+  - key: {fileID: -8742956828380079939, guid: b963e2fa32f64f94faabf5898f05684c, type: 2}
+    value: {fileID: 46575610}
+  - key: {fileID: -1628481978866595311, guid: b963e2fa32f64f94faabf5898f05684c, type: 2}
     value: {fileID: 311317388}
   m_ExposedReferences:
     m_References:
